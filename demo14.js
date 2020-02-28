@@ -62,5 +62,4 @@ MyPromise.prototype.then = function(onFulfilled, onRejected) {
     }, 0)
   }).then(value => {
     console.log(value)
-
   })
