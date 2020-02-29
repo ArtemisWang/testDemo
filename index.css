@@ -1,0 +1,26 @@
+.div-center{
+    border:1px solid black;
+    margin: 0 auto;
+    height:100px;
+    width: 200px;
+}
+
+.float-center{
+    border:1px solid black;
+    float:left;
+    height:50px;
+    width: 100px;
+    left:50%;
+    top:50%;
+    position: absolute;
+    margin:-25px 0 0 -50px;
+}
+
+.absolute-center{
+    border: 1px solid red;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+
+}
