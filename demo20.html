@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS示例</title>
+</head>
+<body>
+    非持久型：
+    <!-- <script src="http://localhost:5000?name=<script>alert(1)</script>"></script> -->
+    <div>{{name}}</div>
+    <script>
+        const name=window.location.href
+        console.log(name)
+    </script>
+</body>
+</html>
