@@ -1,0 +1,25 @@
+.dad{
+    width: 350px;
+    background-color: lightblue;
+    display: flex;
+    flex-wrap:wrap;
+    height:300px;
+    justify-content:center;
+    align-items: flex-start;
+    align-content: space-between;
+}
+
+.child{
+    width: 100px;
+    background-color: cadetblue;
+    margin:5px;
+    flex-shrink: 0;
+}
+
+.first{
+    font-size: 20px;
+}
+
+.third{
+    font-size: 30px;
+}
