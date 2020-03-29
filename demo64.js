@@ -1,13 +1,7 @@
-
-
-function countBonus(a){
-    let n=a.length
-    let dp=[0]
-    for(let i=1;i<n;i++){
-        dp.push(i+dp[i-1])
-    }
-    
+let array_object={
+    1:'one',
+    2:'two'
 }
 
-
-let a=[1,1,2,0,1,2,1,1]
+console.log(array_object.__proto__)
+console.log(isFinite(10),isFinite(NaN))
