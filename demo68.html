@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a.com要jsonp跨域读到b.com的数据</title>
+</head>
+<body>
+    <script>
+        function cb(data){
+            console.log(data)
+        }
+    </script>
+    <script src="http://b.com/kuayu?name=yt&callback=cb"></script>
+    <!-- b.com的服务器处理GET请求，并拼接返回一段js代码如下
+    let data={1,2,3}
+    cb(data) 
+    这样就会显示相关的数据在我们的页面a.com中了-->
+
+</body>
+</html>

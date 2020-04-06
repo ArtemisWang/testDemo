@@ -1,0 +1,18 @@
+.dad{
+    height: 600px;
+    width: 600px;
+    background-color: lightsteelblue;
+    position: relative;
+}
+
+.child{
+    height: 30%;
+    width: 30%;
+    background-color: lightskyblue;
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin:auto;
+}
