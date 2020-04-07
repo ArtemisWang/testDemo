@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>事件代理获取索引值</title>
 </head>
 <body>
     <ul id='my-ul'>
@@ -11,10 +11,16 @@
         <li><b>b</b></li>
     </ul>
     <script>
+        function findIndex(e){
+            let li=document.getElementsByTagName('li')
+            for(let i=0;i<li.length;i++){
+                if(li[i].innerHTML.indexOf(e.target.innerHTML)!==-1){
+                    console.log(i)
+                }
+            }
+        }
         let ul=document.getElementById('my-ul')
-        ul.addEventListener('click',(e)=>{
-            console.log(ul.children.indexOf(e.target))
-        })
+        ul.addEventListener('click',findIndex)
     </script>
 </body>
 </html>
