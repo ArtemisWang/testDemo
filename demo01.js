@@ -1,7 +1,7 @@
 function test(person) {
     person.age = 26
     person = {
-      name: 'yyy',
+      name: 'ya',
       age: 30
     }
   
@@ -13,4 +13,4 @@ function test(person) {
   }
   const p2 = test(p1)
   console.log(p1) // -> { name: 'yck', age: 26 }
-  console.log(p2) // -> { name: 'yyy', age: 30 }
+  console.log(p2) // -> { name: 'ya', age: 30 }

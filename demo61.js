@@ -11,7 +11,7 @@ class Father {
             console.log(`count:${count}`)
         }
     }
-    proArr=[1,2,3]
+    proArr=[[1],2,3]
     name='yt'
 }
 
@@ -25,6 +25,7 @@ class Child extends Father{
 const ch1=new Child('Art',20)
 ch1.color.push('black')
 ch1.proArr.push(4)
+ch1.proArr[0].push([1,2,[3]])
 const ch2=new Child('Kev',19)
 // 独自享用的属性-color
 let f1=ch1.callColor()

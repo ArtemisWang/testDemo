@@ -6,8 +6,8 @@ const show=(i)=>{
 }
 
 for(i;i<10;i++){
-    // (function(i){
-    //     console.log(i)
-    // })(i)
-    show(i)
+    (function (i){
+        console.log(i)
+    })(i)
+    // show(i)
 }
