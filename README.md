@@ -185,5 +185,10 @@
 
 93-git笔记
 
-94-reaveal.js与reveal-md=>做ppt小能手
+94-做ppt小能手=>reaveal.js与reveal-md
 
+95-选择排序
+
+96-插入排序
+
+97-
