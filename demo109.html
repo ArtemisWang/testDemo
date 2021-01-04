@@ -1,0 +1,84 @@
+<!--
+ * @Author: yating.wang
+ * @Date: 2020-12-01 11:03:17
+ * @LastEditors: yating.wang
+ * @LastEditTime: 2020-12-03 10:43:39
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            width: 100vw;
+            height: 100vh;
+            background: #34495e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .heart {
+            width: 200px;
+            height: 200px;
+            background: #e74c3c;
+            transform: rotate(135deg) scale(1.5);
+            animation-name: hd;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+        
+        .heart::before {
+            content: '';
+            width: 200px;
+            height: 200px;
+            background: #e74c37;
+            border-radius: 50%;
+            position: absolute;
+            transform: translateX(-100px);
+        }
+        
+        .heart::after {
+            content: '';
+            width: 200px;
+            height: 200px;
+            background: #e74c37;
+            border-radius: 50%;
+            position: absolute;
+            transform: translateY(100px);
+        }
+        
+        @keyframes hd {
+            25% {
+                transform: rotate(135deg) scale(1);
+            }
+            50% {
+                transform: rotate(135deg) scale(.5);
+            }
+            75% {
+                transform: rotate(135deg) scale(1);
+            }
+            85% {
+                transform: rotate(135deg) scale(.5);
+            }
+            to {
+                transform: rotate(135deg) scale(1.5);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heart"></div>
+</body>
+
+</html>

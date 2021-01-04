@@ -1,0 +1,92 @@
+<!--
+ * @Author: yating.wang
+ * @Date: 2020-12-01 11:03:17
+ * @LastEditors: yating.wang
+ * @LastEditTime: 2020-12-02 16:05:11
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background: #ebe5d2;
+        }
+        
+        main {
+            width: 100vw;
+            height: 100vh;
+            background: #112b63;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        div {
+            width: 100px;
+            height: 100px;
+            background: #f1c40f;
+            animation-name: scale;
+            animation-duration: 2s;
+            border: solid 5px #2c3e50;
+        }
+        
+        @keyframes opacity {
+            to {
+                opacity: .8;
+            }
+        }
+        
+        @keyframes scale {
+            to {
+                width: 300px;
+                height: 300px;
+                border: solid 30px #fff;
+            }
+        }
+        
+        @keyframes background {
+            25% {
+                background: #2ecc71;
+            }
+            50% {
+                background: #e67e22;
+            }
+            75% {
+                background: #9b59b6;
+            }
+            to {
+                background: #e7437e;
+            }
+        }
+        
+        @keyframes radius {
+            25% {
+                border-radius: 50%;
+            }
+            50% {
+                border-radius: 0%;
+            }
+            75% {
+                border-radius: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div></div>
+    </main>
+</body>
+
+</html>

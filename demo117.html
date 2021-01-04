@@ -1,0 +1,116 @@
+<!--
+ * @Author: yating.wang
+ * @Date: 2020-12-07 11:49:38
+ * @LastEditors: yating.wang
+ * @LastEditTime: 2020-12-07 17:37:19
+ * @Description: 骰子布局
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>骰子布局</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+        
+        .box0 {
+            height: 100px;
+            width: 100px;
+            background: rgb(248, 238, 221);
+            border-radius: 20%;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .box0>.item:nth-child(2) {
+            align-self: center;
+        }
+        
+        .box0>.item:nth-child(3) {
+            align-self: flex-end;
+        }
+        
+        .box1 {
+            height: 100px;
+            width: 100px;
+            background: rgb(248, 238, 221);
+            border-radius: 20%;
+            display: flex;
+            justify-content: space-between;
+            align-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .box2 {
+            height: 100px;
+            width: 100px;
+            background: rgb(248, 238, 221);
+            border-radius: 20%;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: space-between;
+        }
+        
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .row:nth-child(2) {
+            justify-content: center;
+        }
+        
+        .item {
+            margin: 6%;
+            height: 23px;
+            width: 23px;
+            background: #000;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box0">
+        <span class="item"></span>
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box1">
+        <span class="item"></span>
+        <span class="item"></span>
+        <span class="item"></span>
+        <span class="item"></span>
+    </div>
+    <div class="box2">
+        <div class="row">
+            <span class="item"></span>
+            <span class="item"></span>
+        </div>
+        <div class="row">
+            <span class="item"></span>
+        </div>
+        <div class="row">
+            <span class="item"></span>
+            <span class="item"></span>
+        </div>
+    </div>
+</body>
+
+</html>
+
+</html>

@@ -1,0 +1,74 @@
+<!--
+ * @Author: yating.wang
+ * @Date: 2020-12-10 10:21:06
+ * @LastEditors: yating.wang
+ * @LastEditTime: 2020-12-10 10:27:29
+ * @Description: 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣杯布局</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: rgb(216, 171, 171);
+            flex: 0 0 50px;
+        }
+        
+        .footer {
+            background: rgb(238, 208, 170);
+            flex: 0 0 50px;
+        }
+        
+        .content {
+            flex: auto;
+            display: flex;
+        }
+        
+        .left {
+            background: rgb(229, 224, 151);
+            flex: 0 0 200px;
+        }
+        
+        .right {
+            background: rgb(163, 223, 166);
+            flex: 0 0 200px;
+        }
+        
+        .center {
+            background: rgb(178, 168, 235);
+            flex: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="content">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+    <div class="footer"></div>
+
+</body>
+
+</html>
+
+</html>

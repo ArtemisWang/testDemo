@@ -1,0 +1,51 @@
+<!--
+ * @Author: yating.wang
+ * @Date: 2020-12-14 08:13:04
+ * @LastEditors: yating.wang
+ * @LastEditTime: 2020-12-14 09:06:16
+ * @Description: 水平垂直居中
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水平垂直居中之父子元素宽高确定</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        .dad {
+            width: 400px;
+            height: 400px;
+            background: rgb(243, 213, 211);
+            position: relative;
+        }
+        
+        .child {
+            width: 200px;
+            height: 200px;
+            background: rgb(194, 223, 192);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -100px 0 0 -100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dad">
+        <div class="child"></div>
+    </div>
+</body>
+
+</html>
