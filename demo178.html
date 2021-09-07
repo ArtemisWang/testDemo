@@ -1,0 +1,35 @@
+<!--
+ * @Author: yating.wang
+ * @Date: 2021-09-07 08:57:50
+ * @LastEditTime: 2021-09-07 10:28:35
+ * @LastEditors: yating.wang
+ * @Description: 查看UI渲染与setTimeout之间的关系:setTimeout挂起后，不妨碍UI渲染线程，JS修改样式会直接附加在行内样式上，优先级高于id选择器，所以JS修改样式后div颜色会改变；当JS修改样式的代码为同步代码时，会直接覆盖CSS中设置的样式
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI渲染与定时器</title>
+</head>
+<body>
+  <div id='body-div' style='height:100px;width: 100px;'></div>
+  <script>
+    console.log(document.getElementById('body-div'));
+    window.setTimeout(function(){
+      document.getElementById('body-div').style.background='yellow';
+    },3000)
+  </script>
+  <style type='text/css'>
+    #body-div{
+      background: blue;
+    }
+  </style>
+  <script>
+    window.setTimeout(function(){
+      document.getElementById('body-div').style.background='red';
+    },1000)
+  </script>
+</body>
+</html>

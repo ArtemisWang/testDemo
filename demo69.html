@@ -1,3 +1,10 @@
+<!--
+ * @Author: yating.wang
+ * @Date: 2020-07-30 13:33:48
+ * @LastEditTime: 2021-08-10 08:59:14
+ * @LastEditors: yating.wang
+ * @Description: 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +19,12 @@
     </ul>
     <script>
         function findIndex(e){
-            let li=document.getElementsByTagName('li')
+            let li=document.querySelectorAll('li') //效率优于getElementsByTagName
             for(let i=0;i<li.length;i++){
                 if(li[i].innerHTML.indexOf(e.target.innerHTML)!==-1){
-                    console.log(i)
-                    // console.log(e.target.innerHTML)
+                    console.log(i) // 0  1
+                    console.log(e.target.innerHTML) //  a  b
+                    return
                 }
             }
         }

@@ -27,7 +27,11 @@ const a={
             address:'somewhere',
             others:0
         }
+    },
+    fn() {
+        console.log(this.action)
     }
 }
 const b= deepClone(a)
+console.log(b, b.fn)
 console.log(b===a)
