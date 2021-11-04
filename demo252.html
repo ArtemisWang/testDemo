@@ -1,0 +1,83 @@
+<!--
+ * @Author: yating.wang
+ * @Date: 2021-10-25 15:40:41
+ * @LastEditTime: 2021-10-27 11:24:11
+ * @LastEditors: yating.wang
+ * @Description: 手写登陆组件
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button class="login-button">登陆</button>
+  <div class="hide login">
+    <div class="login-username">
+      账户名<input />
+    </div>
+    <div class="login-password">
+      密码<input />
+    </div>
+    <div class="login-button-area">
+      <button class="login-cancel">取消</button>
+      <button class="login-confirm">确认</button>
+    </div>
+  </div>
+  <style>
+    .hide {
+      visibility: hidden;
+    }
+
+    .login {
+      box-sizing: border-box;
+      width: 300px;
+      height: 180px;
+      background: darkgray;
+      padding: 36px;
+      text-align: end;
+      line-height: 36px;
+    }
+  </style>
+  <script>
+    const confirm = document.getElementsByClassName('login-confirm')[0]
+    confirm.addEventListener('click', confirmHandle)
+
+    function confirmHandle(e) {
+      console.log(e.target)
+      const username = document.querySelectorAll('.login-username input')[0].value
+      const password = document.querySelectorAll('.login-password input')[0].value
+      console.log('账户名：', username, '\n密码：', password)
+    }
+    const cancel = document.getElementsByClassName('login-cancel')[0]
+    cancel.addEventListener('click', cancelHandle)
+
+    function cancelHandle(e) {
+      console.log(e.target)
+      document.querySelectorAll('.login-username input')[0].value = ''
+      document.querySelectorAll('.login-password input')[0].value = ''
+      const loginDiv = document.getElementsByClassName('login')[0]
+      loginDiv.className = 'hide login'
+      const loginButton = document.getElementsByClassName('hide login-button')[0]
+      loginButton.className = 'login-button'
+    }
+
+    const loginButton = document.getElementsByClassName('login-button')[0]
+    loginButton.addEventListener('click', (e) => {
+      const loginDiv = document.getElementsByClassName('hide login')[0]
+      loginDiv.className = 'login'
+      loginButton.className = 'hide login-button'
+    })
+    axios.post('https://fa4e6412-cab2-4a93-a019-83f503c778af.mock.pstmn.io/login', {
+      name: 'yt',
+      password: '123'
+    }).then((res) => {
+      console.log('res:', res.data)
+    })
+  </script>
+</body>
+</html>

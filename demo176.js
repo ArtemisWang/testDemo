@@ -1,11 +1,13 @@
 /*
  * @Author: yating.wang
  * @Date: 2021-07-22 16:20:01
- * @LastEditTime: 2021-07-27 13:42:59
+ * @LastEditTime: 2021-10-12 13:57:52
  * @LastEditors: yating.wang
  * @Description: apply的实现
  */
 Function.prototype.myApply = function (that, args) {
+  // that指需要指向的this
+  // this指调用此方法的函数
   that.fn = this
   let res = that.fn(...args)
   delete that.fn

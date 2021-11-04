@@ -1,15 +1,15 @@
 /*
  * @Author: yating.wang
- * @Date: 2021-07-22 16:23:16
- * @LastEditTime: 2021-10-12 13:58:30
+ * @Date: 2021-10-12 14:00:59
+ * @LastEditTime: 2021-10-12 14:19:51
  * @LastEditors: yating.wang
  * @Description: bind的实现
  */
 Function.prototype.myBind = function (that, ...args) {
   // 与call和apply的区别在于，bind不执行仅绑定，而call和apply需要执行
-  let fn = this
-  return function () {
-    return fn.apply(that, [...args, ...arguments])
+  that.fn = this
+  return function(){
+    return that.fn(...args,...arguments)
   }
 }
 

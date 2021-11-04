@@ -1,0 +1,47 @@
+<!--
+ * @Author: yating.wang
+ * @Date: 2021-11-02 15:45:17
+ * @LastEditTime: 2021-11-04 11:16:00
+ * @LastEditors: yating.wang
+ * @Description: transition的应用-点击图片后滑动到屏幕水平垂直居中的位置
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      clear: both;
+    }
+
+    img {
+      width: 50vw;
+      height: auto;
+      position: relative;
+      top: 0;
+      transition: width 4s ease-in-out, top 4s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <img src="./static/demo.jpg" />
+</body>
+<script>
+  var img = document.getElementsByTagName('img')[0]
+  img.onload = function () {
+    img.addEventListener('click', (e) => {
+      e.target.style.width = "100vw";
+      e.target.style.top = `calc(50vh - ${img.offsetHeight}px)`;
+      console.log(`calc(50vh - ${img.offsetHeight}px)`)
+    })
+  }
+</script>
+</html>
