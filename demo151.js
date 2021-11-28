@@ -1,3 +1,10 @@
+/*
+ * @Author: yating.wang
+ * @Date: 2021-06-18 13:33:53
+ * @LastEditTime: 2021-11-11 08:25:10
+ * @LastEditors: yating.wang
+ * @Description: 链表的基本操作
+ */
 class Node {
   constructor(v, next) {
     this.value = v
@@ -9,7 +16,7 @@ class LinkList {
   constructor() {
     // 链表长度
     this.size = 0
-    // 虚拟头部
+    // 虚拟头部，在真正头节点之前
     this.dummyNode = new Node(null, null)
   }
   find(header, index, currentIndex) {
@@ -50,13 +57,13 @@ class LinkList {
     return this.removeNode(0)
   }
   removeLastNode() {
-    return this.removeLastNode(this.size, true)
+    return this.removeNode(this.size, true)
   }
   checkIndex(index) {
     if (index < 0 || index > this.size) throw new Error('index error')
   }
   getNode(index) {
-    // 返回索引对应的节点（index=0，返回第一个节点）
+    // 返回索引对应的节点（index=0，返回第一个节点，非虚拟头节点）
     this.checkIndex(index)
     if (this.isEmpty()) return
     return this.find(this.dummyNode, index, 0).next

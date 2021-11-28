@@ -1,3 +1,10 @@
+/*
+ * @Author: yating.wang
+ * @Date: 2021-06-24 12:15:10
+ * @LastEditTime: 2021-11-04 15:01:18
+ * @LastEditors: yating.wang
+ * @Description: 
+ */
 class Tree {
   constructor(value) {
     this.value = value
@@ -36,6 +43,27 @@ function backTraversal2(root) {
     console.log(stack2.pop().value)
   }
 }
+function backTraversal3(root) {
+// 非递归
+  const stack = []
+  while (stack.length > 0 || root) {
+    if (root) {
+      stack.push(root)
+      root = root.left
+    } else {
+      root = stack.pop()
+      if (!root.right) {
+        console.log(root.value)
+        root=null
+      } else {
+        let tmp = root.right
+        root.right = null
+        stack.push(root)
+        root = tmp
+      }
+    }
+  }
+}
 
 
 let tree = new Tree(1)
@@ -48,5 +76,6 @@ let tree3 = tree2.left
 tree3.right = new Tree(6)
 tree3.right.left = new Tree(7)
 
-backTraversal(tree)
-backTraversal2(tree)
+// backTraversal(tree)
+// backTraversal2(tree)
+backTraversal3(tree)

@@ -4,6 +4,7 @@ class Node {
     this.value = v
     this.left = null
     this.right = null
+    this.size=1
   }
 }
 
@@ -29,8 +30,10 @@ class BST {
       return new Node(v)
     }
     if (node.value > v) {
+      node.size++
       node.left = this._addChild(node.left, v)
     } else if (node.value < v) {
+      node.size++
       node.right = this._addChild(node.right, v)
     }
     return node
@@ -42,10 +45,22 @@ class BST {
     this._pre(this.root)
   }
   _pre(node) {
-    if (node) {
-      console.log(node.value)
-      this._pre(node.left)
-      this._pre(node.right)
+    //递归版本
+    // if (node) {
+    //   console.log(node.value)
+    //   this._pre(node.left)
+    //   this._pre(node.right)
+    // }
+    //非递归版本
+    const stack = []
+    while (stack.length > 0 || node) {
+      if (node) {
+        console.log(node.value)
+        stack.push(node.right)
+        node=node.left
+      } else {
+        node=stack.pop()
+      }
     }
   }
   // 中序遍历：左根右
@@ -53,10 +68,23 @@ class BST {
     this._mid(this.root)
   }
   _mid(node) {
-    if (node) {
-      this._mid(node.left)
-      console.log(node.value)
-      this._mid(node.right)
+    // 递归版本
+    // if (node) {
+    //   this._mid(node.left)
+    //   console.log(node.value)
+    //   this._mid(node.right)
+    // }
+    // 非递归版本
+    const stack = []
+    while (stack.length>0||node) {
+      if (node) {
+        stack.push(node)
+        node=node.left
+      } else {
+        node = stack.pop()
+        console.log(node.value)
+        node=node.right
+      }
     }
   }
   // 后序遍历：左右根
@@ -64,13 +92,33 @@ class BST {
     this._back(this.root)
   }
   _back(node) {
-    if (node) {
-      this._back(node.left)
-      this._back(node.right)
-      console.log(node.value);
-
+    // 递归版本
+    // if (node) {
+    //   this._back(node.left)
+    //   this._back(node.right)
+    //   console.log(node.value);
+    // }
+    // 非递归版本
+      const stack = []
+      while (stack.length > 0 || node) {
+        if (node) {
+          stack.push(node)
+          node = node.left
+        } else {
+          node = stack.pop()
+          if (!node.right) {
+            console.log(node.value)
+            node = null
+          } else {
+            let tmp = node.right
+            node.right = null
+            stack.push(node)
+            node = tmp
+          }
+        }
+      }
     }
-  }
+  
   // 广度遍历
   breadthTraversal() {
     if (!this.root) {
@@ -127,19 +175,6 @@ class BST {
   _getSize(node) {
     return node ? node.size : 0
   }
-  _addChild(node, v) {
-    if (!node) {
-      return new Node(v)
-    }
-    if (node.value > v) {
-      node.size++
-      node.left = this._addChild(node.left, v)
-    } else if (node.value < v) {
-      node.size++
-      node.right = this._addChild(node.right, v)
-    }
-    return node
-  }
   select(k) {
     let node = this._select(this.root, k)
     return node ? node.value : null
@@ -150,24 +185,26 @@ class BST {
     let size = node.left ? node.left.size : 0
     // 判断size是否大于k
     // 如果大于k，代表所需要的节点在左节点
-    if (size > k) return this._select(node.left, k)
+    if (size >= k) return this._select(node.left, k)
     // 如果小于k，代表所需要的节点在右节点
     // 注意这里需要重新计算k值，减去根节点除了右子树的节点数量
-    if (size < k) return this._select(node.right, k - size - 1)
+    if (size < k-1) return this._select(node.right, k - size - 1)
     return node
   }
   // 删除最小节点
   deleteMin() {
     this.root = this._deleteMin(this.root)
+    this.size--
     console.log(this.root)
   }
   _deleteMin(node) {
     // 一直递归左子树，如果左子树为空，就判断节点是否拥有右子树
     // 有右子树的话，就把需要删除的节点替换为右子树
-    if ((node != null) && !node.left) return node.right
+    if (node && !node.left) return node.right
     node.left = this._deleteMin(node.left)
     // 最后需要重新维护节点的'size'属性
     node.size = this._getSize(node.left) + this._getSize(node.right) + 1
+
     return node
   }
   // 删除节点
@@ -176,6 +213,7 @@ class BST {
   // 原节点的删除后继节点后的右子树，均大于后继节点
   delete(v) {
     this.root = this._delete(this.root, v)
+    this.size = this.root.size
   }
   _delete(node, v) {
     if (!node) {
@@ -189,11 +227,11 @@ class BST {
       node.left = this._delete(node.left, v)
     } else {
       // 进入这个条件，说明已经找到了节点
-      // 先判断节点是否拥有左右子树的一个
+      // 先判断节点是否仅拥有左右子树的一个
       // 是的话，将子树返回出去，这里和'_deleteMin'的操作一样
       if (!node.left) return node.right
       if (!node.right) return node.left
-      // 进入这里，代表节点拥有左右子树
+      // 进入这里，代表节点同时拥有左右子树
       // 先取出当前节点的后继节点，也就是取出当前节点右子树的最小值
       let min = this._getMin(node.right)
       // 取出最小值后，删除最小值
@@ -207,4 +245,26 @@ class BST {
     node.size = this._getSize(node.left) + this._getSize(node.right) + 1
     return node
   }
+  // 树查找
+  getNode(v) {
+    return _getNode(this.root,v)    
+  }
+  _getNode(node, v) {
+    if (!node) return null
+    if (node.value === v) return node
+    if (node.value > v) return this._getNode(node.left, v)
+    return this._getNode(node.right, v)
+  }
 }
+
+
+const root = new BST()
+root.addNode(5)
+root.addNode(3)
+root.addNode(2)
+root.addNode(4)
+root.addNode(7)
+root.addNode(6)
+root.addNode(10)
+root.delete(3)
+console.log(root.getSize(),root)

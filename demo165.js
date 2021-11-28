@@ -50,5 +50,15 @@ let tree3 = tree2.left
 tree3.right = new Tree(6)
 tree3.right.left = new Tree(7)
 
+//     1
+//    / \
+//   2   3
+//  / \
+// 4   5
+//  \
+//   6
+//  /
+// 7
+
 midTraversal(tree)
 midTraversal2(tree)

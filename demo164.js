@@ -39,6 +39,18 @@ function preTraversal2(root) {
     }
   }
 }
+function preTraversal3(root) {
+  const stack = []
+  while (stack.length > 0 || root) {
+    if (root) {
+      console.log(root.value)
+      stack.push(root.right)
+      root = root.left
+    } else {
+      root = stack.pop()
+    }
+  }
+}
 
 let tree = new Tree(1)
 tree.left = new Tree(2)
@@ -50,5 +62,5 @@ let tree3 = tree2.left
 tree3.right = new Tree(6)
 tree3.right.left = new Tree(7)
 
-preTraversal(tree)
-preTraversal2(tree)
+// preTraversal(tree)
+preTraversal3(tree)
