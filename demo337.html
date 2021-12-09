@@ -1,0 +1,40 @@
+<!--
+ * @Author: yating.wang
+ * @Date: 2021-12-05 12:10:07
+ * @LastEditTime: 2021-12-05 12:47:12
+ * @LastEditors: yating.wang
+ * @Description: JSONP-A域 http://127.0.0.1:8080/demo337.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSONP-A域 http://127.0.0.1:8080/demo337.html</title>
+</head>
+<body>
+  <!-- <script src="http://127.0.0.1:5501/demo337.js" async></script> -->
+  <script>
+    // function jsonp(data) {
+    //   console.log(data)
+    // }
+    function jsonp(url, jsonpCallback, success) {
+      let script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.type = 'text/javascript'
+      window[jsonpCallback] = function(data) {
+        success && success(data)
+      }
+      document.body.appendChild(script)
+    }
+    jsonp('http://127.0.0.1:5501/demo337.js', 'callback', function(value) {
+      console.log(value)
+    });
+    jsonp('http://127.0.0.1:55102/demo337-2.js', 'callback', function(value) {
+      console.log(value+'2')
+    });
+  </script>
+</body>
+</html>
