@@ -1,0 +1,35 @@
+<!--
+ * @Author: yating.wang
+ * @Date: 2021-12-19 15:08:22
+ * @LastEditTime: 2021-12-19 16:07:54
+ * @LastEditors: yating.wang
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  BBB
+  <script>
+    var setCookie = function(name, value, day) {
+      if (day !== 0) {     //当设置的时间等于0时，不设置expires属性，cookie在浏览器关闭后删除
+        var expires = day * 24 * 60 * 60 * 1000;
+        var date = new Date(+new Date() + expires);
+        document.cookie = name + "=" + escape(value) + ";expires=" + date.toUTCString() + `;samesite=none;secure=true;`;
+      } else {
+        document.cookie = name + "=" + escape(value);
+      }
+    };
+    let search = document.location.search
+    search = search.slice(1).split('=')
+    setCookie(search[0] + '1', search[1] + '1', 1)
+    setCookie(search[0] + '2', search[1] + '2', 1)
+    console.log(search)
+  </script>
+</body>
+</html>

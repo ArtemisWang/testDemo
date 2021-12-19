@@ -1,0 +1,44 @@
+<!--
+ * @Author: yating.wang
+ * @Date: 2021-12-10 14:37:52
+ * @LastEditTime: 2021-12-10 15:22:02
+ * @LastEditors: yating.wang
+ * @Description: 全选和单行选中的联动
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全选和单行选中的联动</title>
+</head>
+<body>
+  <button>全选</button>
+  <div id='input'>
+    <input type="checkbox" value='1'>1</input>
+    <input type="checkbox" value='2'>2</input>
+    <input type="checkbox" value='3'>3</input>
+    <input type="checkbox" value='4'>4</input>
+  </div>
+  <script>
+    let button = document.getElementsByTagName('button')[0]
+    button.addEventListener('click', toggle)
+    let input = document.getElementById('input')
+    input.addEventListener('click', changeAllChosen)
+    const checkboxes = input.children
+    let allChosen = false
+    function toggle(){
+      console.log(checkboxes)
+      for(let checkbox of checkboxes){
+        allChosen||(checkbox.checked=true)
+        allChosen&& (checkbox.checked = false)
+      }
+      allChosen=!allChosen
+    }
+    function changeAllChosen(e){
+      allChosen=false
+    }
+  </script>
+</body>
+</html>

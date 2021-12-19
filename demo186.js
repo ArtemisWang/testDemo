@@ -1,7 +1,7 @@
 /*
  * @Author: yating.wang
  * @Date: 2021-10-13 09:55:27
- * @LastEditTime: 2021-10-13 12:35:13
+ * @LastEditTime: 2021-12-15 09:43:59
  * @LastEditors: yating.wang
  * @Description: 时间格式化输出
  */
@@ -71,4 +71,5 @@ function formatDate(date, formatType){
   return res
 }
 var localOffset = new Date().getTimezoneOffset()*60*1000
-console.log(formatDate(new Date(1409894060000+localOffset), 'yy-M-d hh:m:s 星期w'))
+console.log(formatDate(new Date(1409894060000 + localOffset), 'yy-M-d hh:m:s 星期w'))
+console.log(formatDate(new Date(), 'yyyy-M-d hh:mm:ss 星期w'))

@@ -1,7 +1,7 @@
 <!--
  * @Author: yating.wang
  * @Date: 2020-07-30 13:33:48
- * @LastEditTime: 2021-08-10 08:59:14
+ * @LastEditTime: 2021-12-14 11:11:16
  * @LastEditors: yating.wang
  * @Description: 
 -->
@@ -19,6 +19,7 @@
     </ul>
     <script>
         function findIndex(e){
+          e.stopPropagation();
             let li=document.querySelectorAll('li') //效率优于getElementsByTagName
             for(let i=0;i<li.length;i++){
                 if(li[i].innerHTML.indexOf(e.target.innerHTML)!==-1){
@@ -29,7 +30,7 @@
             }
         }
         let ul=document.getElementById('my-ul')
-        ul.addEventListener('click',findIndex)
+        ul.addEventListener('click',findIndex) // 捕获与冒泡的结果一致，只是浏览器兼容性上冒泡优于捕获
     </script>
 </body>
 </html>
