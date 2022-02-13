@@ -1,7 +1,7 @@
 /*
  * @Author: yating.wang
  * @Date: 2020-07-30 13:33:48
- * @LastEditTime: 2021-12-01 12:17:02
+ * @LastEditTime: 2022-02-13 10:29:57
  * @LastEditors: yating.wang
  * @Description: 拍平数组-扁平化
  */
@@ -27,6 +27,17 @@ function flattenByDeep(array, deep = 1) {
     Array.isArray(current) && deep > 1 ?
     target.concat(flattenByDeep(current, deep - 1)) :
     target.concat(current), [])
+}
+
+// 实现flat新特性
+Array.prototype.myFlat = function(depth) {
+  const isDeep = this.some(item => item instanceof Array)
+  if (!isDeep) return this
+  if (!depth || depth === 1) {
+    return [].concat(...this)
+  }
+  const temp = [].concat(...this)
+  return temp.myFlat(depth - 1)
 }
 
 let arr = flat([1, 2, 3, [4, 5, [6],

@@ -1,7 +1,7 @@
 /*
  * @Author: yating.wang
  * @Date: 2021-11-04 15:54:32
- * @LastEditTime: 2021-11-04 16:11:27
+ * @LastEditTime: 2022-01-12 08:11:48
  * @LastEditors: yating.wang
  * @Description: 重建二叉树
  */
@@ -23,4 +23,4 @@ function rebuildTree(preArr, midArr) {
   root.right = rebuildTree(preArr.slice(rootIndex + 1), midArr.slice(rootIndex + 1)) || null
   return root
 }
-console.log(rebuildTree([1,2,4,7,3,5,6,8],[4,7,2,1,5,3,8,6]))
+console.log(rebuildTree([3, 9, 20, 15, 7], [9, 3, 15, 20, 7]))

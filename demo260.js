@@ -1,7 +1,7 @@
 /*
  * @Author: yating.wang
  * @Date: 2021-11-08 12:39:12
- * @LastEditTime: 2021-11-08 12:55:58
+ * @LastEditTime: 2022-01-12 13:01:47
  * @LastEditors: yating.wang
  * @Description: 二叉搜索树的后序遍历
  */
@@ -18,7 +18,9 @@ function backTraversalSearch(arr){
       highIndex=-1
     }
   })
-  return highIndex===-1?false:(backTraversalSearch(arr.slice(0,highIndex))&&backTraversalSearch(arr.slice(highIndex)))
+  if (highIndex === -1) return false
+  if (highIndex === -2) return backTraversalSearch(arr)
+  return backTraversalSearch(arr.slice(0,highIndex))&&backTraversalSearch(arr.slice(highIndex))
 }
 
-console.log(backTraversalSearch([2,4,3,6,8,7,5]))
+console.log(backTraversalSearch([5, 2, -17, -11, 25, 76, 62, 98, 92, 61]))
