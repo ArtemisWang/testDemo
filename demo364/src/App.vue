@@ -1,16 +1,19 @@
 <!--
  * @Author: yating.wang
  * @Date: 2021-12-29 14:00:43
- * @LastEditTime: 2022-01-10 19:12:54
+ * @LastEditTime: 2022-03-08 08:02:40
  * @LastEditors: yating.wang
  * @Description: 
 -->
 <template>
   <div id="app">
-    <!-- <div id="nav">
+    <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
+      <router-link to="/form">Form</router-link> |
+      <router-link to="/next">Next</router-link> |
+      <router-link to="/demo373">demo373</router-link> ｜ 
+      <router-link to="/demo382">手写音乐播放器进度条</router-link> 
+    </div>
     <router-view />
   </div>
 </template>

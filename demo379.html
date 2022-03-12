@@ -1,0 +1,45 @@
+<!--
+ * @Author: yating.wang
+ * @Date: 2022-02-20 20:25:46
+ * @LastEditTime: 2022-02-20 20:29:12
+ * @LastEditors: yating.wang
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <body>
+    <p>Count numbers: <output id="result"></output></p>
+    <button onclick="startWorker()">Start Worker</button>
+    <button onclick="stopWorker()">Stop Worker</button>
+    <br><br>
+    <script>
+      var w;
+      function startWorker() {
+        if (typeof (Worker) !== "undefined") {
+          if (typeof (w) == "undefined") {
+            // 目前还没有启动worker
+            console.log('new worker')
+            w = new Worker("demo_workers.js");
+          }
+          w.onmessage = function(event) {
+            document.getElementById("result").innerHTML = event.data;
+          };
+        } else {
+          // 没有Worker对象
+          document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+        }
+      }
+      function stopWorker() {
+        w.terminate();
+        w = undefined
+      }
+    </script>
+</body>
+</html>

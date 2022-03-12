@@ -1,7 +1,7 @@
 <!--
  * @Author: yating.wang
  * @Date: 2021-12-29 14:56:27
- * @LastEditTime: 2022-01-05 08:13:10
+ * @LastEditTime: 2022-02-17 19:02:28
  * @LastEditors: yating.wang
  * @Description: 表单组件
 -->
@@ -19,7 +19,7 @@ export default {
   created() {
     const { list, initialValue } = this.props;
     list.forEach((formItem) => {
-      this.$set(
+      this.$set( //向响应式对象中添加一个 property，并确保这个新 property 同样是响应式的，且触发视图更新。它必须用于向响应式对象上添加新 property，因为 Vue 无法探测普通的新增 property
         this.formObject,
         formItem.fieldName,
         initialValue[formItem.fieldName] ??

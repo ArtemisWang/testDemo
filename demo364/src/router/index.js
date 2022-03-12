@@ -1,7 +1,7 @@
 /*
  * @Author: yating.wang
  * @Date: 2021-12-29 14:00:43
- * @LastEditTime: 2022-01-10 18:56:07
+ * @LastEditTime: 2022 - 03 - 08 08: 04: 44
  * @LastEditors: yating.wang
  * @Description: 
  */
@@ -9,7 +9,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Form from '../components/Form.vue'
+import Next from '../components/Next.vue'
 import demo from '../views/demo373.vue'
+import demo1 from '../views/demo382.vue'
 
 Vue.use(VueRouter)
 
@@ -36,6 +38,15 @@ const routes = [
     path: '/demo373',
     name: 'demo373',
     component: demo
+  },
+  {
+    path: '/next',
+    name: 'Next',
+    component: Next
+  }, {
+    path: '/demo382',
+    name: 'demo382',
+    component: demo1
   },
 ]
 

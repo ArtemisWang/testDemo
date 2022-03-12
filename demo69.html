@@ -1,7 +1,7 @@
 <!--
  * @Author: yating.wang
  * @Date: 2020-07-30 13:33:48
- * @LastEditTime: 2021-12-14 11:11:16
+ * @LastEditTime: 2022-02-17 12:53:43
  * @LastEditors: yating.wang
  * @Description: 
 -->
@@ -24,13 +24,13 @@
             for(let i=0;i<li.length;i++){
                 if(li[i].innerHTML.indexOf(e.target.innerHTML)!==-1){
                     console.log(i) // 0  1
-                    console.log(e.target.innerHTML) //  a  b
+                    console.log(e.target) //  a  b e.target始终会指向最深层的dom节点
                     return
                 }
             }
         }
         let ul=document.getElementById('my-ul')
-        ul.addEventListener('click',findIndex) // 捕获与冒泡的结果一致，只是浏览器兼容性上冒泡优于捕获
+        ul.addEventListener('click',findIndex,true) // 捕获与冒泡的结果一致，只是浏览器兼容性上冒泡优于捕获
     </script>
 </body>
 </html>

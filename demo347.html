@@ -1,7 +1,7 @@
 <!--
  * @Author: yating.wang
  * @Date: 2021-12-10 14:37:52
- * @LastEditTime: 2021-12-10 15:22:02
+ * @LastEditTime: 2022-02-16 11:21:37
  * @LastEditors: yating.wang
  * @Description: 全选和单行选中的联动
 -->
@@ -30,11 +30,19 @@
     let allChosen = false
     function toggle(){
       console.log(checkboxes)
+      let count=0
       for(let checkbox of checkboxes){
+        if(!allChosen&&checkbox.checked){
+          count++
+        }
         allChosen||(checkbox.checked=true)
         allChosen&& (checkbox.checked = false)
       }
       allChosen=!allChosen
+      if(count===checkboxes.length){
+        // 如果用户手动全选了，需要再调用一次button.click置为全不选
+        button.click()
+      }
     }
     function changeAllChosen(e){
       allChosen=false
