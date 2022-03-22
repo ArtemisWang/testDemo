@@ -1,7 +1,7 @@
 <!--
  * @Author: yating.wang
  * @Date: 2021-12-29 14:00:43
- * @LastEditTime: 2022-03-08 08:02:40
+ * @LastEditTime: 2022-03-16 09:54:56
  * @LastEditors: yating.wang
  * @Description: 
 -->
@@ -11,8 +11,9 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/form">Form</router-link> |
       <router-link to="/next">Next</router-link> |
-      <router-link to="/demo373">demo373</router-link> ｜ 
-      <router-link to="/demo382">手写音乐播放器进度条</router-link> 
+      <router-link to="/demo373">demo373-virtuallist</router-link> ｜
+      <router-link to="/demo382">手写音乐播放器进度条</router-link> ｜
+      <router-link to="/demo387">virtualList+lazyload</router-link>
     </div>
     <router-view />
   </div>

@@ -1,7 +1,7 @@
 /*
  * @Author: yating.wang
  * @Date: 2021-12-29 14:00:43
- * @LastEditTime: 2022 - 03 - 08 08: 04: 44
+ * @LastEditTime: 2022-03-16 09:54:10
  * @LastEditors: yating.wang
  * @Description: 
  */
@@ -12,11 +12,11 @@ import Form from '../components/Form.vue'
 import Next from '../components/Next.vue'
 import demo from '../views/demo373.vue'
 import demo1 from '../views/demo382.vue'
+import demo2 from '../views/demo387.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'Home',
     component: Home
@@ -27,7 +27,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import( /* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
     path: '/form',
@@ -47,6 +47,11 @@ const routes = [
     path: '/demo382',
     name: 'demo382',
     component: demo1
+  },
+  {
+    path: '/demo387',
+    name: 'demo387',
+    component: demo2
   },
 ]
 

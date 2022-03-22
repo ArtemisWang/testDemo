@@ -1,0 +1,138 @@
+<!--
+ * @Author: yating.wang
+ * @Date: 2022-03-15 13:04:53
+ * @LastEditTime: 2022-03-15 13:15:28
+ * @LastEditors: yating.wang
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Document</title>
+  <style>
+    img {
+      display: block;
+      margin-bottom: 50px;
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+  其中主资源HTML和CSS的优先级最高，其他资源根据情况的不同优先级不一
+
+  　　JS脚本根据它们在文件中的位置是否异步、延迟或阻塞获得不同的优先级：
+
+  　　1、网络在第一个图片资源之前阻塞的脚本在网络优先级中是中级
+
+  　　2、网络在第一个图片资源之后阻塞的脚本在网络优先级中是低级
+
+  　　3、异步／延迟／插入的脚本（无论在什么位置）在网络优先级中是很低级
+
+  　　图片（视口可见）将会获得相对于视口不可见图片（低级）的更高的优先级（中级），所以某些程度上 Chrome 将会尽量懒加载这些图片。低优先级的图片在布局完成被视口发现时，将会获得优先级提升
+
+  　　preload 使用 “as” 属性加载的资源将会获得与资源 “type” 属性所拥有的相同的优先级。比如说，preload as="style" 将会获得比 as=“script” 更高的优先级
+
+  　　不带 “as” 属性的 preload 的优先级将会等同于异步请求
+  其中主资源HTML和CSS的优先级最高，其他资源根据情况的不同优先级不一
+
+  　　JS脚本根据它们在文件中的位置是否异步、延迟或阻塞获得不同的优先级：
+
+  　　1、网络在第一个图片资源之前阻塞的脚本在网络优先级中是中级
+
+  　　2、网络在第一个图片资源之后阻塞的脚本在网络优先级中是低级
+
+  　　3、异步／延迟／插入的脚本（无论在什么位置）在网络优先级中是很低级
+
+  　　图片（视口可见）将会获得相对于视口不可见图片（低级）的更高的优先级（中级），所以某些程度上 Chrome 将会尽量懒加载这些图片。低优先级的图片在布局完成被视口发现时，将会获得优先级提升
+
+  　　preload 使用 “as” 属性加载的资源将会获得与资源 “type” 属性所拥有的相同的优先级。比如说，preload as="style" 将会获得比 as=“script” 更高的优先级
+
+  　　不带 “as” 属性的 preload 的优先级将会等同于异步请求
+  <img
+    data-src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/0e2442a7d933c8954d9be773d51373f0830200d4.jpg"
+    alt="">
+  其中主资源HTML和CSS的优先级最高，其他资源根据情况的不同优先级不一
+
+  　　JS脚本根据它们在文件中的位置是否异步、延迟或阻塞获得不同的优先级：
+
+  　　1、网络在第一个图片资源之前阻塞的脚本在网络优先级中是中级
+
+  　　2、网络在第一个图片资源之后阻塞的脚本在网络优先级中是低级
+
+  　　3、异步／延迟／插入的脚本（无论在什么位置）在网络优先级中是很低级
+
+  　　图片（视口可见）将会获得相对于视口不可见图片（低级）的更高的优先级（中级），所以某些程度上 Chrome 将会尽量懒加载这些图片。低优先级的图片在布局完成被视口发现时，将会获得优先级提升
+
+  　　preload 使用 “as” 属性加载的资源将会获得与资源 “type” 属性所拥有的相同的优先级。比如说，preload as="style" 将会获得比 as=“script” 更高的优先级
+
+  　　不带 “as” 属性的 preload 的优先级将会等同于异步请求
+  <img
+    data-src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/c75c10385343fbf233e9732cb27eca8064388ffc.jpg"
+    alt="">
+  其中主资源HTML和CSS的优先级最高，其他资源根据情况的不同优先级不一
+
+  　　JS脚本根据它们在文件中的位置是否异步、延迟或阻塞获得不同的优先级：
+
+  　　1、网络在第一个图片资源之前阻塞的脚本在网络优先级中是中级
+
+  　　2、网络在第一个图片资源之后阻塞的脚本在网络优先级中是低级
+
+  　　3、异步／延迟／插入的脚本（无论在什么位置）在网络优先级中是很低级
+
+  　　图片（视口可见）将会获得相对于视口不可见图片（低级）的更高的优先级（中级），所以某些程度上 Chrome 将会尽量懒加载这些图片。低优先级的图片在布局完成被视口发现时，将会获得优先级提升
+
+  　　preload 使用 “as” 属性加载的资源将会获得与资源 “type” 属性所拥有的相同的优先级。比如说，preload as="style" 将会获得比 as=“script” 更高的优先级
+
+  　　不带 “as” 属性的 preload 的优先级将会等同于异步请求
+  其中主资源HTML和CSS的优先级最高，其他资源根据情况的不同优先级不一
+
+  　　JS脚本根据它们在文件中的位置是否异步、延迟或阻塞获得不同的优先级：
+
+  　　1、网络在第一个图片资源之前阻塞的脚本在网络优先级中是中级
+
+  　　2、网络在第一个图片资源之后阻塞的脚本在网络优先级中是低级
+
+  　　3、异步／延迟／插入的脚本（无论在什么位置）在网络优先级中是很低级
+
+  　　图片（视口可见）将会获得相对于视口不可见图片（低级）的更高的优先级（中级），所以某些程度上 Chrome 将会尽量懒加载这些图片。低优先级的图片在布局完成被视口发现时，将会获得优先级提升
+
+  　　preload 使用 “as” 属性加载的资源将会获得与资源 “type” 属性所拥有的相同的优先级。比如说，preload as="style" 将会获得比 as=“script” 更高的优先级
+
+  　　不带 “as” 属性的 preload 的优先级将会等同于异步请求
+  <img
+    data-src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/c75c10385343fbf233e9732cb27eca8064388ffc.jpg"
+    alt="">
+  <img
+    data-src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/c75c10385343fbf233e9732cb27eca8064388ffc.jpg"
+    alt="">
+  <img
+    data-src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/c75c10385343fbf233e9732cb27eca8064388ffc.jpg"
+    alt="">
+
+</body>
+<script>
+  const images = document.querySelectorAll('img')
+  const callback = entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const image = entry.target
+        const data_src = image.getAttribute('data-src')
+        image.setAttribute('src', data_src)
+        observer.unobserve(image) // 当给img元素赋上正确图片值后就解除对该元素的观察
+        console.log('触发')
+      }
+    })
+  }
+  const observer = new IntersectionObserver(callback)
+  images.forEach((image) => {
+    observer.observe(image)
+  })
+
+
+</script>
+</html>

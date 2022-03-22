@@ -1,7 +1,7 @@
 <!--
  * @Author: yating.wang
  * @Date: 2022-01-10 18:45:17
- * @LastEditTime: 2022-03-16 09:16:21
+ * @LastEditTime: 2022-03-16 10:12:55
  * @LastEditors: yating.wang
  * @Description: 
 -->
@@ -88,6 +88,10 @@ export default {
       //此时的偏移量
       this.startOffset = scrollTop - (scrollTop % this.itemSize); // 当滑动到底部时：this.$el.scrollTop+this.$el.clientHeight===this.$el.scrollHeight
       console.log(this.$el.scrollTop, this.screenHeight, this.$el.scrollHeight);
+      if (scrollTop + this.screenHeight >= this.$el.scrollHeight - 100) {
+        console.log("load");
+        this.$emit("load");
+      }
     },
   },
 };
