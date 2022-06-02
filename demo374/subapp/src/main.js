@@ -1,13 +1,14 @@
 /*
  * @Author: yating.wang
  * @Date: 2022-01-24 15:36:11
- * @LastEditTime: 2022-01-24 15:49:45
+ * @LastEditTime: 2022-06-01 14:22:25
  * @LastEditors: yating.wang
  * @Description: 
  */
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import '../public-path'
 
 Vue.config.productionTip = false
 

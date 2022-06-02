@@ -1,7 +1,7 @@
 /*
  * @Author: yating.wang
  * @Date: 2022-01-24 19:28:00
- * @LastEditTime: 2022-01-24 19:28:01
+ * @LastEditTime: 2022-06-01 13:08:34
  * @LastEditors: yating.wang
  * @Description: 
  */
@@ -13,6 +13,8 @@ module.exports = {
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
+    host: '0.0.0.0',
+    port: 8080
   },
   configureWebpack: {
     output: {

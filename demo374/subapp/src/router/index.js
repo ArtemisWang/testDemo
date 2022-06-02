@@ -1,6 +1,14 @@
+/*
+ * @Author: yating.wang
+ * @Date: 2022-01-24 15:36:11
+ * @LastEditTime: 2022-06-01 14:08:46
+ * @LastEditors: yating.wang
+ * @Description: 
+ */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+// import About1 from '../views/About.vue'
 
 Vue.use(VueRouter)
 
@@ -10,6 +18,11 @@ const routes = [
     name: 'Home',
     component: Home
   },
+  // {
+  //   path: '/about1',
+  //   name: 'About1',
+  //   component: About1
+  // },
   {
     path: '/about',
     name: 'About',
@@ -22,7 +35,7 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
+  base: 'subapp',
   routes
 })
 
