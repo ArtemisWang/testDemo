@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-10-21 12:50:14
  * @LastEditTime: 2021-10-21 14:03:55
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 倒计时
  */
 function second(second) {
@@ -11,7 +11,7 @@ function second(second) {
     hour: Math.floor(second / 3600 % 24),
     min: Math.floor(second / 60 % 60),
     second: second % 60
-  }
+  };
 }
 
 function render(data) {
@@ -23,4 +23,4 @@ function render(data) {
       <span>${('0' + data.second).slice(-2)}</span>
   `;
 }
-render(second(3601))
+render(second(3601));

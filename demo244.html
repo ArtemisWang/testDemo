@@ -1,72 +1,81 @@
 <!--
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-10-21 16:06:13
  * @LastEditTime: 2021-10-22 10:28:23
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 智能提示
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <div class="search">
     <div><input type="text" class="js-input" value=" 10 "></div>
     <div class="js-suggest">
-        <ul>
-            <li>根据输入框的值</li>
-            <li>从给定字符串数组中筛选出匹配的数据，依次显示在li节点中</li>
-            <li>如果没有匹配的数据，请移除所有li节点，并隐藏.js-suggest节点</li>
-        </ul>
+      <ul>
+        <li>根据输入框的值</li>
+        <li>从给定字符串数组中筛选出匹配的数据，依次显示在li节点中</li>
+        <li>如果没有匹配的数据，请移除所有li节点，并隐藏.js-suggest节点</li>
+      </ul>
     </div>
-</div>
-<style>
-.search{
-  position: relative;
-}
-.js-input{
-  width: 450px;
-  height: 22px;
-  line-height: 22px;
-  font-size: 16px;
-  padding: 8px;
-  border: 1px solid #cccccc;
-  outline: none;
-}
-.js-suggest{
-  width: 466px;
-  font-size: 14px;
-  border: 1px solid #cccccc;
-  background: #ffffff;
-  position: absolute;
-  left: 0;
-  top: 39px;
-}
-.js-suggest.hide{
-  display: none;
-}
-.js-suggest ul{
-  display: block;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.js-suggest ul li{
-  color: #000;
-  font: 14px arial;
-  line-height: 25px;
-  padding: 0 8px;
-  position: relative;
-  cursor: default;
-}
-.js-suggest ul li:hover{
-  background: #f0f0f0;
-}
-</style>
-<script type="text/javascript" src="./demo244.js"></script>
+  </div>
+  <style>
+    .search {
+      position: relative;
+    }
+
+    .js-input {
+      width: 450px;
+      height: 22px;
+      line-height: 22px;
+      font-size: 16px;
+      padding: 8px;
+      border: 1px solid #cccccc;
+      outline: none;
+    }
+
+    .js-suggest {
+      width: 466px;
+      font-size: 14px;
+      border: 1px solid #cccccc;
+      background: #ffffff;
+      position: absolute;
+      left: 0;
+      top: 39px;
+    }
+
+    .js-suggest.hide {
+      display: none;
+    }
+
+    .js-suggest ul {
+      display: block;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .js-suggest ul li {
+      color: #000;
+      font: 14px arial;
+      line-height: 25px;
+      padding: 0 8px;
+      position: relative;
+      cursor: default;
+    }
+
+    .js-suggest ul li:hover {
+      background: #f0f0f0;
+    }
+  </style>
+  <script type="text/javascript" src="./demo244.js"></script>
 </body>
+
 </html>

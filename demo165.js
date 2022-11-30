@@ -1,14 +1,14 @@
 /*
- * @Author: yating.wang 
+ * @Author: artemis 
  * @Date: 2021-07-Tu 12:35:10 
- * @Last Modified by:   yating.wang 
+ * @Last Modified by:   artemis 
  * @Last Modified time: 2021-07-Tu 12:35:10 
  */
 class Tree {
   constructor(value) {
-    this.value = value
-    this.left = null
-    this.right = null
+    this.value = value;
+    this.left = null;
+    this.right = null;
   }
 }
 
@@ -17,38 +17,38 @@ class Tree {
 function midTraversal(root) {
   // 递归
   if (root) {
-    midTraversal(root.left)
-    console.log(root.value)
-    midTraversal(root.right)
+    midTraversal(root.left);
+    console.log(root.value);
+    midTraversal(root.right);
   }
 }
 
 function midTraversal2(root) {
   // 非递归
   // 使用栈结构
-  let stack = []
+  let stack = [];
   while (stack.length > 0 || root) {
     if (root) {
-      stack.push(root)
-      root = root.left
+      stack.push(root);
+      root = root.left;
     } else {
-      root = stack.pop()
-      console.log(root.value)
-      root = root.right
+      root = stack.pop();
+      console.log(root.value);
+      root = root.right;
     }
   }
 }
 
 
-let tree = new Tree(1)
-tree.left = new Tree(2)
-tree.right = new Tree(3)
-let tree2 = tree.left
-tree2.left = new Tree(4)
-tree2.right = new Tree(5)
-let tree3 = tree2.left
-tree3.right = new Tree(6)
-tree3.right.left = new Tree(7)
+let tree = new Tree(1);
+tree.left = new Tree(2);
+tree.right = new Tree(3);
+let tree2 = tree.left;
+tree2.left = new Tree(4);
+tree2.right = new Tree(5);
+let tree3 = tree2.left;
+tree3.right = new Tree(6);
+tree3.right.left = new Tree(7);
 
 //     1
 //    / \
@@ -60,5 +60,5 @@ tree3.right.left = new Tree(7)
 //  /
 // 7
 
-midTraversal(tree)
-midTraversal2(tree)
+midTraversal(tree);
+midTraversal2(tree);

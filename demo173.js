@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-07-20 15:21:54
  * @LastEditTime: 2021-07-22 08:36:58
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 立即执行防抖
  */
 /**
@@ -13,24 +13,24 @@
  * @return {*}
  */
 function debounce(fn, wait = 500, immediate = true) {
-  let timer = 0
+  let timer = 0;
   return function (...args) {
     if (immediate) {
-      fn.apply(this, args)
-      immediate = false
+      fn.apply(this, args);
+      immediate = false;
     }
-    if (timer) clearTimeout(timer)
+    if (timer) clearTimeout(timer);
     timer = setTimeout(() => {
       if (!immediate) {
-        fn.apply(this, args)
-        immediate = true
+        fn.apply(this, args);
+        immediate = true;
       }
-    }, wait)
-  }
+    }, wait);
+  };
 }
 
 function fn() {
-  console.log('1')
+  console.log('1');
 }
 
 // window.addEventListener('mouseover', debounce(fn))

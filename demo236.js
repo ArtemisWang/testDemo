@@ -1,17 +1,17 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-10-20 13:07:09
  * @LastEditTime: 2021-10-20 13:31:29
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 获取指定字符串
  */
 function captureThreeNumbers(str) {
-  let index = str.match(/[0-9]{3}/)
+  let index = str.match(/[0-9]{3}/);
   if (!index) {
-    return false
+    return false;
   }
-  index = index.index
-  return str.slice(index, index + 3)
+  index = index.index;
+  return str.slice(index, index + 3);
 }
 
-captureThreeNumbers('absh')
+captureThreeNumbers('absh');

@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-10-25 15:04:36
  * @LastEditTime: 2021-10-25 15:23:42
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 简易计算器
  */
 var Calculator = {

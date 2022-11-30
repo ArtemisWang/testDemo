@@ -1,8 +1,8 @@
 <!--
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2022-01-25 12:48:57
  * @LastEditTime: 2022-01-25 12:53:11
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 
 -->
 <template>
@@ -19,13 +19,13 @@ export default {
 
 <style lang='less' scoped>
 div {
-  color:lightblue;
+  color: lightblue;
 }
 input {
   color: lightblue;
   width: 200px;
   height: 40px;
   border: solid lightblue 1px;
-  margin:20px;
+  margin: 20px;
 }
 </style>

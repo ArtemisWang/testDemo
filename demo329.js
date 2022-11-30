@@ -1,11 +1,11 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-11-28 13:25:25
  * @LastEditTime: 2021-11-28 13:25:26
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 最长回文子串
  */
-var longestPalindromeSubseq = function(s) {
+var longestPalindromeSubseq = function (s) {
   const n = s.length;
   const dp = new Array(n).fill(0).map(() => new Array(n).fill(0));
   for (let i = n - 1; i >= 0; i--) {

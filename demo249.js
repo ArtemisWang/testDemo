@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-10-25 13:08:34
  * @LastEditTime: 2021-10-25 13:47:19
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 设置标签
  */
 var tagInput = {
@@ -42,20 +42,20 @@ function bindEvent() {
 }
 
 function addTag() {
-  if (!this.input || !this.input.value || !(this.input.value.trim())) return
-  const children = this.input.parentNode.children
-  let noSame = true
+  if (!this.input || !this.input.value || !(this.input.value.trim())) return;
+  const children = this.input.parentNode.children;
+  let noSame = true;
   Array.from(children).forEach(item => {
-    noSame = noSame && item.innerHTML !== this.input.value.trim()
-  })
-  noSame && this.input.insertAdjacentHTML('beforeBegin', `<span class="tag">${this.input.value.trim()}</span>`)
-  this.input.value = ''
+    noSame = noSame && item.innerHTML !== this.input.value.trim();
+  });
+  noSame && this.input.insertAdjacentHTML('beforeBegin', `<span class="tag">${this.input.value.trim()}</span>`);
+  this.input.value = '';
 }
 
 function removeTag() {
   if (this.input.value === '') {
-    const children = this.input.parentNode.children
-    children.length > 1 && children[children.length - 2].remove()
+    const children = this.input.parentNode.children;
+    children.length > 1 && children[children.length - 2].remove();
   }
 }
 tagInput.init();

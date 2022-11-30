@@ -1,36 +1,39 @@
 <!--
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2020-07-30 13:33:48
  * @LastEditTime: 2022-02-17 12:53:43
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>事件代理获取索引值</title>
 </head>
+
 <body>
     <ul id='my-ul'>
         <li>a</li>
         <li><b>b</b></li>
     </ul>
     <script>
-        function findIndex(e){
-          e.stopPropagation();
-            let li=document.querySelectorAll('li') //效率优于getElementsByTagName
-            for(let i=0;i<li.length;i++){
-                if(li[i].innerHTML.indexOf(e.target.innerHTML)!==-1){
-                    console.log(i) // 0  1
-                    console.log(e.target) //  a  b e.target始终会指向最深层的dom节点
-                    return
+        function findIndex(e) {
+            e.stopPropagation();
+            let li = document.querySelectorAll('li'); //效率优于getElementsByTagName
+            for (let i = 0; i < li.length; i++) {
+                if (li[i].innerHTML.indexOf(e.target.innerHTML) !== -1) {
+                    console.log(i); // 0  1
+                    console.log(e.target); //  a  b e.target始终会指向最深层的dom节点
+                    return;
                 }
             }
         }
-        let ul=document.getElementById('my-ul')
-        ul.addEventListener('click',findIndex,true) // 捕获与冒泡的结果一致，只是浏览器兼容性上冒泡优于捕获
+        let ul = document.getElementById('my-ul');
+        ul.addEventListener('click', findIndex, true); // 捕获与冒泡的结果一致，只是浏览器兼容性上冒泡优于捕获
     </script>
 </body>
+
 </html>

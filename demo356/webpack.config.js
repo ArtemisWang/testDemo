@@ -1,11 +1,11 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-17 13:47:31
  * @LastEditTime: 2021-12-17 13:47:32
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 
  */
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   entry: {
@@ -23,4 +23,4 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].txt'
   }
-}
+};

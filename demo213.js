@@ -1,22 +1,22 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-10-19 08:48:00
  * @LastEditTime: 2021-10-19 08:56:53
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 流程控制
  */
 function fizzBuzz(num) {
   if (num == null || typeof num !== 'number') {
-    return false
+    return false;
   }
   if (num % 3 === 0) {
     if (num % 5 === 0) {
-      return 'fizzbuzz'
+      return 'fizzbuzz';
     }
-    return 'fizz'
+    return 'fizz';
   }
   if (num % 5 === 0) {
-    return 'buzz'
+    return 'buzz';
   }
-  return num
+  return num;
 }

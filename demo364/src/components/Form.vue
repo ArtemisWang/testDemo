@@ -1,8 +1,8 @@
 <!--
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-29 14:56:27
  * @LastEditTime: 2022-02-17 19:02:28
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 表单组件
 -->
 <script>
@@ -10,7 +10,7 @@
 
 export default {
   name: "Form",
-  props:['props'],
+  props: ['props'],
   data() {
     return {
       formObject: {},
@@ -23,23 +23,23 @@ export default {
         this.formObject,
         formItem.fieldName,
         initialValue[formItem.fieldName] ??
-          (formItem.type === "CHECKBOX" ? [] : "")
+        (formItem.type === "CHECKBOX" ? [] : "")
       );
     });
   },
   methods: {
-    submitForm(){
+    submitForm() {
       this.$refs._form.validate((valid) => {
-          if (valid) {
-            console.log('submit!');
-            this.$emit('submit', this.formObject)
-          } else {
-            console.log('error submit!!');
-            return false; // 终止表单提交
-          }
-        });
+        if (valid) {
+          console.log('submit!');
+          this.$emit('submit', this.formObject);
+        } else {
+          console.log('error submit!!');
+          return false; // 终止表单提交
+        }
+      });
     },
-    resetForm(){
+    resetForm() {
       this.$refs._form.resetFields();
     }
   },

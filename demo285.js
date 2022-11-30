@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-11-13 18:43:36
  * @LastEditTime: 2021-11-13 18:53:38
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 和为S的连续正整数序列
  */
 
@@ -11,25 +11,25 @@
 // 3. 和减去p1的值， 同时p1++，直至和恰好小于等于S， 如果等于， 打印这组值， p1++
 // 4. 重复第2步， 直至p1 >= p2
 function findContiniousSequence(S) {
-  if (S <= 2) return
-  let p1 = 1, p2 = 2
-  let sum = 3
+  if (S <= 2) return;
+  let p1 = 1, p2 = 2;
+  let sum = 3;
   while (p1 < p2) {
     while (sum < S) {
-      p2++
-      sum+=p2
+      p2++;
+      sum += p2;
     }
     if (sum === S) {
-      console.log(p1 + '-' + p2)
-      p2++
-      sum+=p2
+      console.log(p1 + '-' + p2);
+      p2++;
+      sum += p2;
     }
     while (sum > S) {
-      sum -= p1
-      p1++
+      sum -= p1;
+      p1++;
     }
   }
-  return
+  return;
 }
 
-console.log(findContiniousSequence(15))
+console.log(findContiniousSequence(15));

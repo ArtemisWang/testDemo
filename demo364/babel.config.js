@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-29 14:00:43
  * @LastEditTime: 2022 - 02 - 27 19: 24: 03
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 
  */
 module.exports = {
@@ -10,4 +10,4 @@ module.exports = {
     '@vue/cli-plugin-babel/preset'
   ],
   plugins: ["transform-vue-jsx"]
-}
+};

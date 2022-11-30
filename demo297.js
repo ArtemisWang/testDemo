@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-11-16 09:42:45
  * @LastEditTime: 2021-11-16 10:00:39
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 接雨水
  */
 
@@ -18,7 +18,7 @@ const { min } = require("lodash");
 // 3. 一定有height[left] >= height[top]
 // 4. 如果有height[i] > height[top]， 则有接雨水的区域， 该区域宽度是i - left - 1， 该区域高度是min(height[i], height[left]) - height[top]
 
-var trap = function(height) {
+var trap = function (height) {
   let ans = 0;
   const stack = [];
   const n = height.length;

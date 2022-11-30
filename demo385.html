@@ -1,12 +1,13 @@
 <!--
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2022-03-15 10:56:31
  * @LastEditTime: 2022-03-15 11:39:05
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +22,7 @@
     }
   </style>
 </head>
+
 <body>
   <img src="default.jpg"
     data-src="https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/0e2442a7d933c8954d9be773d51373f0830200d4.jpg"
@@ -67,23 +69,24 @@
 
 </body>
 <script>
-  const images = document.querySelectorAll('img')
+  const images = document.querySelectorAll('img');
   const callback = entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const image = entry.target
-        const data_src = image.getAttribute('data-src')
-        image.setAttribute('src', data_src)
-        observer.unobserve(image) // 当给img元素赋上正确图片值后就解除对该元素的观察
-        console.log('触发')
+        const image = entry.target;
+        const data_src = image.getAttribute('data-src');
+        image.setAttribute('src', data_src);
+        observer.unobserve(image); // 当给img元素赋上正确图片值后就解除对该元素的观察
+        console.log('触发');
       }
-    })
-  }
-  const observer = new IntersectionObserver(callback)
+    });
+  };
+  const observer = new IntersectionObserver(callback);
   images.forEach((image) => {
-    observer.observe(image)
+    observer.observe(image);
   })
 
 
 </script>
+
 </html>

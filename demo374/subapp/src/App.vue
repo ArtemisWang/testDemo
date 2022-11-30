@@ -1,16 +1,16 @@
 <!--
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2022-01-24 15:36:11
- * @LastEditTime: 2022-01-24 16:29:05
- * @LastEditors: yating.wang
+ * @LastEditTime: 2022-06-02 13:31:15
+ * @LastEditors: artemis
  * @Description: 
 -->
 <template>
-  <div id="app">
+  <div id="app-subapp">
     <div id="nav">
       子页面
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 

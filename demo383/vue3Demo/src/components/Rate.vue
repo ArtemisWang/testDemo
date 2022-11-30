@@ -1,8 +1,8 @@
 <!--
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2022-03-14 15:11:05
  * @LastEditTime: 2022-03-14 20:36:28
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 
 -->
 <template>
@@ -11,13 +11,7 @@
     <div class="rate" @mouseout="mouseOut">
       <span @mouseover="mouseOver(num)" v-for="num in 5" :key="num">☆</span>
       <span class="hollow" :style="fontwidth">
-        <span
-          @mouseover="mouseOver(num)"
-          v-for="num in 5"
-          :key="num"
-          @click="onRate(num)"
-          >★</span
-        >
+        <span @mouseover="mouseOver(num)" v-for="num in 5" :key="num" @click="onRate(num)">★</span>
       </span>
     </div>
   </div>

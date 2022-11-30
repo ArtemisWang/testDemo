@@ -1,8 +1,8 @@
 <!--
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2022-01-25 12:40:36
  * @LastEditTime: 2022-01-25 12:48:06
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 
 -->
 <template>
@@ -14,17 +14,17 @@
 <script>
 
 export default {
-  name:'snow-button'
+  name: 'snow-button'
 }
 </script>
 
 <style lang='less' scoped>
-  button {
-    width: 100px;
-    height: 50px;
-    border: lightblue 1px solid;
-    border-radius: 10%;
-    color: lightblue;
-    background: white;
-  }
+button {
+  width: 100px;
+  height: 50px;
+  border: lightblue 1px solid;
+  border-radius: 10%;
+  color: lightblue;
+  background: white;
+}
 </style>

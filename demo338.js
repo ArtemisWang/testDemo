@@ -1,10 +1,10 @@
-const { reject } = require("lodash");
+// const { reject } = require("lodash");
 
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-02 16:08:50
- * @LastEditTime: 2021-12-05 11:36:02
- * @LastEditors: yating.wang
+ * @LastEditTime: 2022-03-30 17:34:07
+ * @LastEditors: artemis
  * @Description: 模拟实现promise
  */
 const PENDING = 'pending';
@@ -25,7 +25,7 @@ function MyPromise(executor) {
         fun();
       });
     }
-  }
+  };
   const reject = (reason) => {
     if (this.state === PENDING) {
       this.state = REJECTED;
@@ -34,23 +34,23 @@ function MyPromise(executor) {
         fun();
       });
     }
-  }
+  };
   try {
     executor(resolve, reject);
   } catch (reason) {
     reject(reason);
   }
 }
-MyPromise.prototype.then = function(onFulfilled, onRejected) {
+MyPromise.prototype.then = function (onFulfilled, onRejected) {
   if (typeof onFulfilled != 'function') {
-    onFulfilled = function(value) {
+    onFulfilled = function (value) {
       return value;
-    }
+    };
   }
   if (typeof onRejected != 'function') {
-    onRejected = function(reason) {
+    onRejected = function (reason) {
       throw reason;
-    }
+    };
   }
   const promise2 = new MyPromise((resolve, reject) => {
     switch (this.state) {
@@ -84,7 +84,7 @@ MyPromise.prototype.then = function(onFulfilled, onRejected) {
               reject(reason);
             }
           }, 0);
-        })
+        });
         this.onRejectedCallbacks.push(() => {
           setTimeout(() => {
             try {
@@ -94,17 +94,17 @@ MyPromise.prototype.then = function(onFulfilled, onRejected) {
               reject(reason);
             }
           }, 0);
-        })
-        console.log('这里是pending',this)
+        });
+        console.log('这里是pending', this);
         break;
     }
-  })
+  });
   return promise2;
-}
-MyPromise.prototype.catch = function(onRejected) {
+};
+MyPromise.prototype.catch = function (onRejected) {
   return this.then(null, onRejected);
 };
-MyPromise.prototype.finally = function(fn) {
+MyPromise.prototype.finally = function (fn) {
   return this.then(value => {
     fn();
     return value;
@@ -113,17 +113,17 @@ MyPromise.prototype.finally = function(fn) {
     throw reason;
   });
 };
-MyPromise.resolve = function(value) {
+MyPromise.resolve = function (value) {
   return new MyPromise((resolve, reject) => {
     resolve(value);
   });
 };
-MyPromise.reject = function(reason) {
+MyPromise.reject = function (reason) {
   return new MyPromise((resolve, reject) => {
     reject(reason);
   });
 };
-MyPromise.all = function(promises) {
+MyPromise.all = function (promises) {
   return new Promise((resolve, reject) => {
     if (promises.length === 0) {
       resolve([]);
@@ -143,8 +143,8 @@ MyPromise.all = function(promises) {
       }
     }
   });
-}
-MyPromise.race = function(promises) {
+};
+MyPromise.race = function (promises) {
   return new Promise((resolve, reject) => {
     if (promises.length === 0) {
       resolve();
@@ -159,7 +159,7 @@ MyPromise.race = function(promises) {
       }
     }
   });
-}
+};
 
 console.log(1);
 
@@ -168,26 +168,26 @@ let promise = new MyPromise((resolve, reject) => {
 });
 
 promise.then((value) => {
-  console.log(value+'1');
-  return value+1
+  console.log(value + '1');
+  return value + 1;
 }).then((item) => {
-  console.log(item + '2')
-  return item+2
+  console.log(item + '2');
+  return item + 2;
 }).then(res => {
-  console.log(res + '3')
+  console.log(res + '3');
 });
 
 // console.log(MyPromise.resolve(222))
 console.log(2);
 
 MyPromise.all([Promise.resolve(1), Promise.reject(2), Promise.resolve(3)]).then(value => {
-  console.log('all:',value)
+  console.log('all:', value);
 }).catch(err => {
-  console.log('err-all:',err)
-})
+  console.log('err-all:', err);
+});
 
 MyPromise.race([Promise.reject(1), Promise.reject(2), Promise.resolve(3)]).then(value => {
-  console.log('race:', value)
+  console.log('race:', value);
 }).catch(err => {
-  console.log('err-race:', err)
-})
+  console.log('err-race:', err);
+});

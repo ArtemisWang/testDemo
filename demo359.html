@@ -1,34 +1,38 @@
 <!--
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-24 11:45:25
  * @LastEditTime: 2022-02-21 10:27:34
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
   <div class="textarea" contenteditable="true" placeholder="This is placeholder"></div>
   <style>
-  .textarea {
-    height: 200px;
-    width: 300px;
-    padding: 4px;
-    border: 1px solid #888;
-    resize: vertical; /* 允许用户调整垂直方向的大小 */
-    overflow: auto;
-  }
+    .textarea {
+      height: 200px;
+      width: 300px;
+      padding: 4px;
+      border: 1px solid #888;
+      resize: vertical;
+      /* 允许用户调整垂直方向的大小 */
+      overflow: auto;
+    }
 
-  .textarea:empty::before {
-    content: attr(placeholder);
-    color: #bbb;
-  }
+    .textarea:empty::before {
+      content: attr(placeholder);
+      color: #bbb;
+    }
   </style>
 </body>
+
 </html>

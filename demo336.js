@@ -1,15 +1,15 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-05 12:09:35
  * @LastEditTime: 2021-12-05 12:09:35
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 
  */
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-01 14:18:06
  * @LastEditTime: 2021-12-01 14:27:43
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 柯里化
  */
 function currying(fn, ...args) {
@@ -27,4 +27,4 @@ function getUrl(protocol, domain, path) {
 let conardliSite = currying(getUrl)('http', 'www.conardli.top');
 let page1 = conardliSite('page1.html');
 
-console.log(page1, getUrl.length)
+console.log(page1, getUrl.length);

@@ -1,39 +1,39 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-10-25 08:51:23
  * @LastEditTime: 2021-10-25 13:05:30
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: dom节点转成json数据
  */
 function dom2json() {
-  const dom = document.getElementById('jsContainer')
+  const dom = document.getElementById('jsContainer');
 
   function solveChildren(item1) {
-    if (!item1) return {}
-    const res = {}
+    if (!item1) return {};
+    const res = {};
     if (item1.nodeValue && item1.nodeValue.trim()) {
-      res.tag = 'text'
-      res.content = item1.nodeValue.trim()
+      res.tag = 'text';
+      res.content = item1.nodeValue.trim();
     } else {
       if (item1.tagName) {
-        res.tag = item1.tagName.toLowerCase()
-        res.attributes = {}
-        res.children = []
+        res.tag = item1.tagName.toLowerCase();
+        res.attributes = {};
+        res.children = [];
       }
       if (item1.attributes) {
-        let attributes = {}
+        let attributes = {};
         for (let key of Array.from(item1.attributes)) {
-          attributes[key.name] = key.value
+          attributes[key.name] = key.value;
         }
-        res.attributes = attributes
+        res.attributes = attributes;
       }
       if (item1.childNodes.length) {
-        res.children = Array.from(item1.childNodes).map(item => solveChildren(item)).filter(item => item.tag != null)
+        res.children = Array.from(item1.childNodes).map(item => solveChildren(item)).filter(item => item.tag != null);
       }
     }
-    return res
+    return res;
   }
-  return solveChildren(dom)
+  return solveChildren(dom);
 }
 
 
@@ -70,4 +70,4 @@ function f() {
     return key1.every(key => isSame(o1[key], o2[key]));
   }
 }
-f()
+f();

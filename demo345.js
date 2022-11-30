@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-09 17:59:29
  * @LastEditTime: 2021-12-09 21:04:40
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 实现一个LazyMan
  */
 // 方法一
@@ -54,45 +54,45 @@ function LazyMan(name) {
 
 // 方法二
 
-class LazyMan2{
+class LazyMan2 {
   constructor(name) {
     const task = () => {
-      console.log(`Hi! This is ${name}!`)
-      this.next()
-    }
-    this._tasks = [task]
+      console.log(`Hi! This is ${name}!`);
+      this.next();
+    };
+    this._tasks = [task];
     setTimeout(() => {
-      this.next()
-    },0)
+      this.next();
+    }, 0);
   }
   next() {
-    const task = this._tasks.shift()
-    task&&task()
+    const task = this._tasks.shift();
+    task && task();
   }
   eat(food) {
     this._tasks.push(() => {
-      console.log(`Eat ${food}~`)
-      this.next() 
-    })
-    return this
+      console.log(`Eat ${food}~`);
+      this.next();
+    });
+    return this;
   }
   sleep(time) {
     this._tasks.push(() => {
       setTimeout(() => {
-        console.log(`Wake up after ${time}`)
-        this.next()
-      },time*1000)
-    })
-    return this
+        console.log(`Wake up after ${time}`);
+        this.next();
+      }, time * 1000);
+    });
+    return this;
   }
   sleepFirst(time) {
     this._tasks.unshift(() => {
       setTimeout(() => {
-        console.log(`Wake up after ${time}`)
-        this.next()
-      }, time*1000)
-    })
-    return this
+        console.log(`Wake up after ${time}`);
+        this.next();
+      }, time * 1000);
+    });
+    return this;
   }
 }
 
@@ -106,13 +106,13 @@ class LazyMan2{
 //   Wake up after 10
 // Eat dinner~
 
-  // LazyMan("Hank").eat("dinner").eat("supper")
+// LazyMan("Hank").eat("dinner").eat("supper")
 // // 输出：
 // Hi This is Hank!
 //   Eat dinner~
 //   Eat supper~
 
-  LazyMan("Hank").sleepFirst(5).eat("supper")
+LazyMan("Hank").sleepFirst(5).eat("supper");
 // // 输出：
 // //等待5秒
 // Wake up after 5

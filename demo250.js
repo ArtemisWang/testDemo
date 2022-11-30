@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-10-25 13:51:48
  * @LastEditTime: 2021-10-25 15:00:39
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 选择组件
  */
 function CheckGroup(renderTo, options, isMultiple) {
@@ -22,8 +22,8 @@ CheckGroup.prototype.val = fVal;
 function fInitHtml() {
   var that = this;
   // 请补全代码，拼接html字符串
-  var sHtml = `<div class="checkgroup${(!that.isMultiple)?' radius':''}">` + that.options.map(option => {
-    return `<div data-val="${option.value}" class="item">${option.text}</div>`
+  var sHtml = `<div class="checkgroup${(!that.isMultiple) ? ' radius' : ''}">` + that.options.map(option => {
+    return `<div data-val="${option.value}" class="item">${option.text}</div>`;
   }).join('') + '</div>';
   that.renderTo.innerHTML = sHtml;
   // 请补全代码，获取checkgroup的dom元素引用
@@ -43,24 +43,24 @@ function fToggleEl(item) {
   var that = this;
   if (that.isSelected(item)) {
     // 请补全代码
-    item.className = 'item'
+    item.className = 'item';
   } else if (that.isMultiple) {
     // 请补全代码
-    item.className = 'item selected'
+    item.className = 'item selected';
   } else {
     // 请补全代码
     Array.from(that.el.children).forEach(i => {
       if (i.attributes['data-val'].value === that.val()[0]) {
-        i.className = 'item'
+        i.className = 'item';
       }
-    })
-    item.className = 'item selected'
+    });
+    item.className = 'item selected';
   }
 }
 
 function fIsSelected(item) {
   // 请补全代码，判断item是否选中
-  return this.val().indexOf(item.attributes['data-val'].value) >= 0
+  return this.val().indexOf(item.attributes['data-val'].value) >= 0;
 }
 
 function fVal(values) {
@@ -72,10 +72,10 @@ function fVal(values) {
     var result = [];
     Array.from(that.el.children).forEach(item => {
       if (item.className === 'item selected') {
-        items.push(item)
-        result.push(item.attributes['data-val'].value)
+        items.push(item);
+        result.push(item.attributes['data-val'].value);
       }
-    })
+    });
     return result;
   };
   !that.isMultiple && values.length > 1 && (values.length = 1);
@@ -84,7 +84,7 @@ function fVal(values) {
   // 请补全代码，在指定元素上加上高亮的class
   items.forEach(item => {
     if (values.indexOf(item.attributes['data-val'].value) >= 0) {
-      that.toggleEl(item)
+      that.toggleEl(item);
     }
   });
 }
@@ -106,4 +106,4 @@ function f() {
   var result = !!(el.getElementsByClassName('selected').length === 1);
   return result;
 }
-console.log(f())
+console.log(f());

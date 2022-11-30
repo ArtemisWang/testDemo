@@ -1,12 +1,13 @@
 <!--
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-11-02 15:45:17
  * @LastEditTime: 2021-11-04 11:16:00
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: transition的应用-点击图片后滑动到屏幕水平垂直居中的位置
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,17 +32,19 @@
     }
   </style>
 </head>
+
 <body>
   <img src="./static/demo.jpg" />
 </body>
 <script>
-  var img = document.getElementsByTagName('img')[0]
+  var img = document.getElementsByTagName('img')[0];
   img.onload = function () {
     img.addEventListener('click', (e) => {
       e.target.style.width = "100vw";
       e.target.style.top = `calc(50vh - ${img.offsetHeight}px)`;
-      console.log(`calc(50vh - ${img.offsetHeight}px)`)
-    })
+      console.log(`calc(50vh - ${img.offsetHeight}px)`);
+    });
   }
 </script>
+
 </html>

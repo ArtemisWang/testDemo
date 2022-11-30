@@ -1,16 +1,16 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2022-01-24 15:36:11
- * @LastEditTime: 2022-06-01 14:08:46
- * @LastEditors: yating.wang
+ * @LastEditTime: 2022-06-02 14:55:03
+ * @LastEditors: artemis
  * @Description: 
  */
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+// import Vue from 'vue'
+// import VueRouter from 'vue-router'
+import Home from '../views/Home.vue';
 // import About1 from '../views/About.vue'
 
-Vue.use(VueRouter)
+// Vue.use(VueRouter)
 
 const routes = [
   {
@@ -31,12 +31,12 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
-]
+];
 
-const router = new VueRouter({
-  mode: 'history',
-  base: 'subapp',
-  routes
-})
+// let router = new VueRouter({
+//   mode: 'history',
+//   base: 'subapp',
+//   routes
+// })
 
-export default router
+export default routes;

@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-03 15:55:52
  * @LastEditTime: 2022-02-13 17:57:39
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 手动实现instanceof
  */
 function myInstanceof(target, origin) {
@@ -11,7 +11,7 @@ function myInstanceof(target, origin) {
     if (origin.prototype === proto) {
       return true;
     } else {
-      return myInstanceof(proto, origin)
+      return myInstanceof(proto, origin);
     }
   } else {
     return false;
@@ -21,15 +21,15 @@ function myInstanceof(target, origin) {
 
 function myInstanceof1(left, right) {
   // instanceof是保留字
-  let prototype = right.prototype
-  left = left.__proto__
+  let prototype = right.prototype;
+  left = left.__proto__;
   while (left) {
-    if (left === prototype) return true
-    left = left.__proto__
+    if (left === prototype) return true;
+    left = left.__proto__;
   }
-  return false
+  return false;
 }
 
-const arr = [1, 2, 3]
+const arr = [1, 2, 3];
 
-console.log(myInstanceof(arr, Array), myInstanceof1(arr, Array))
+console.log(myInstanceof(arr, Array), myInstanceof1(arr, Array));

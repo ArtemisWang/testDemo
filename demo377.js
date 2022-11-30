@@ -1,16 +1,16 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2022-02-17 13:34:03
  * @LastEditTime: 2022-02-17 13:35:06
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 
  */
-"use strict"
+"use strict";
 
-let obj = { a: 1, b: 2 }
+let obj = { a: 1, b: 2 };
 Object.defineProperties(obj, {
   a: {
-    writable:false
+    writable: false
   }
-})
-obj.a=2
+});
+obj.a = 2;

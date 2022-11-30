@@ -1,26 +1,26 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2020-07-30 13:33:48
  * @LastEditTime: 2021-11-30 18:36:34
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 深拷贝
  */
 function deepClone(a) {
   if (typeof a !== 'object' || a == null) {
-    return a
+    return a;
   }
-  let b
+  let b;
   if (a instanceof Array) {
-    b = []
+    b = [];
   } else {
-    b = {}
+    b = {};
   }
   for (let key in a) {
     if (a.hasOwnProperty(key)) {
-      b[key] = deepClone(a[key])
+      b[key] = deepClone(a[key]);
     }
   }
-  return b
+  return b;
 }
 
 const a = {
@@ -36,9 +36,9 @@ const a = {
     }
   },
   fn() {
-    console.log(this.action)
+    console.log(this.action);
   }
-}
-const b = deepClone(a)
-console.log(b, b.fn)
-console.log(b === a)
+};
+const b = deepClone(a);
+console.log(b, b.fn);
+console.log(b === a);

@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-11-04 15:54:32
  * @LastEditTime: 2022-01-12 08:11:48
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 重建二叉树
  */
 // 输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
@@ -10,17 +10,17 @@
 
 class Tree {
   constructor(value) {
-    this.value = value
-    this.left = null
-    this.right = null
+    this.value = value;
+    this.left = null;
+    this.right = null;
   }
 }
 function rebuildTree(preArr, midArr) {
-  if(!preArr.length) return 
-  let root = new Tree(preArr[0])
-  let rootIndex=midArr.indexOf(preArr[0])
-  root.left = rebuildTree(preArr.slice(1, rootIndex + 1), midArr.slice(0, rootIndex))||null
-  root.right = rebuildTree(preArr.slice(rootIndex + 1), midArr.slice(rootIndex + 1)) || null
-  return root
+  if (!preArr.length) return;
+  let root = new Tree(preArr[0]);
+  let rootIndex = midArr.indexOf(preArr[0]);
+  root.left = rebuildTree(preArr.slice(1, rootIndex + 1), midArr.slice(0, rootIndex)) || null;
+  root.right = rebuildTree(preArr.slice(rootIndex + 1), midArr.slice(rootIndex + 1)) || null;
+  return root;
 }
-console.log(rebuildTree([3, 9, 20, 15, 7], [9, 3, 15, 20, 7]))
+console.log(rebuildTree([3, 9, 20, 15, 7], [9, 3, 15, 20, 7]));

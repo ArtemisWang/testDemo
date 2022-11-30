@@ -1,23 +1,23 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-10-26 16:15:49
  * @LastEditTime: 2021-10-26 16:23:37
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 
  */
 const deepClone = function (obj) {
-  if (typeof obj != 'object' || obj == null) return obj
-  let res = {}
+  if (typeof obj != 'object' || obj == null) return obj;
+  let res = {};
   if (obj instanceof Array) {
-    res = []
+    res = [];
   }
   for (let key in obj) {
     if (obj.hasOwnProperty(key)) {
-      res[key] = deepClone(obj[key])
+      res[key] = deepClone(obj[key]);
     }
   }
-  return res
-}
+  return res;
+};
 const a = {
   name: 'art',
   action: 'click',
@@ -31,7 +31,7 @@ const a = {
     }
   },
   fn() {
-    console.log(this.action)
+    console.log(this.action);
   }
-}
-console.log(deepClone(a))
+};
+console.log(deepClone(a));

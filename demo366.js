@@ -1,21 +1,21 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-29 13:16:04
  * @LastEditTime: 2021-12-29 13:45:17
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 单例模式
  */
 // 声明getInstance静态方法版单例模式
-class Singleton{
+class Singleton {
   constructor(name) {
-    this.name = name
-    this.instance=null
+    this.name = name;
+    this.instance = null;
   }
   static getInstance(name) {
     if (this.instance) {
-      return this.instance
+      return this.instance;
     }
-    return this.instance=new Singleton(name)
+    return this.instance = new Singleton(name);
   }
 }
 
@@ -25,17 +25,17 @@ class Singleton{
 
 
 // 使用new声明版单例模式
-class Singleton1{
+class Singleton1 {
   constructor(name) {
-    this.name=name
+    this.name = name;
   }
 }
 function GetSingleton1(name) {
   if (Singleton1.instance) {
-    return Singleton1.instance
+    return Singleton1.instance;
   }
-  return Singleton1.instance = new Singleton1(name)
+  return Singleton1.instance = new Singleton1(name);
 }
-const person2 = new GetSingleton1('yt')
-const person3 = new GetSingleton1('xg')
-console.log(person2, person3)
+const person2 = new GetSingleton1('yt');
+const person3 = new GetSingleton1('xg');
+console.log(person2, person3);

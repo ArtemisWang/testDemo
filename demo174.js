@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-07-22 09:32:12
  * @LastEditTime: 2021-07-22 16:19:12
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 节流
  */
 
@@ -13,14 +13,14 @@
  * @return {*}
  */
 function throttle(fn, wait = 1000) {
-  let timer
+  let timer;
   return function (...args) {
-    if (timer) return
+    if (timer) return;
     timer = setTimeout(() => {
-      fn.apply(this, args)
-      timer = null
-    }, wait)
-  }
+      fn.apply(this, args);
+      timer = null;
+    }, wait);
+  };
 }
 
 // window.addEventListener('mouseover', throttle(() => {

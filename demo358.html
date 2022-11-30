@@ -1,28 +1,31 @@
 <!--
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-19 17:26:37
  * @LastEditTime: 2021-12-19 17:41:42
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: XSS
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>XSS攻击示例</title>
 </head>
+
 <body>
   <input type="text" id='input1'>
   <button onClick="handleClick()">提交</button>
   <script>
-    document.cookie = 'name1=value1;max-age=1000;samesite=none;secure;httpOnly=false'
-    function handleClick(e){
-      console.log(111)
-      const button1 = document.getElementsByTagName('button')[0]
-      button1.insertAdjacentHTML('afterEnd',`<div>${input1.value}</div>`)
+    document.cookie = 'name1=value1;max-age=1000;samesite=none;secure;httpOnly=false';
+    function handleClick(e) {
+      console.log(111);
+      const button1 = document.getElementsByTagName('button')[0];
+      button1.insertAdjacentHTML('afterEnd', `<div>${input1.value}</div>`);
     }
   </script>
 </body>
+
 </html>

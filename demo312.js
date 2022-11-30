@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-11-22 08:49:20
  * @LastEditTime: 2021-11-22 09:45:34
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 旋转数组的最小数字
  */
 function minNumberInRotateArray(arr) {
@@ -24,4 +24,4 @@ function minNumberInRotateArray(arr) {
   return arr[low];
 }
 
-console.log(minNumberInRotateArray([1, 3, 5]))
+console.log(minNumberInRotateArray([1, 3, 5]));

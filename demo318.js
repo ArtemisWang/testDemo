@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-11-23 10:03:48
  * @LastEditTime: 2021-11-23 10:53:31
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 课程表
  */
 function canFinish(N, arr) {
@@ -13,7 +13,7 @@ function canFinish(N, arr) {
     if (!record[pre]) record[pre] = [];
     record[pre].push(next); // 构建有向图
     indegree[next]++; // 入度计算
-  })
+  });
   // total, currentValue, currentIndex
   // 2. 遍历找出入度为0的课程，入栈，栈中存储的是课程的入口
   const stack = indegree.reduce((t, i, index) => {

@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-05 20:10:53
  * @LastEditTime: 2021-12-07 16:15:43
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: Generator-斐波那契
  */
 function* fib(max) {
@@ -20,8 +20,8 @@ function* fib(max) {
 for (var x of fib(10)) {
   console.log(x); // 依次输出0, 1, 1, 2, 3, ...
 }
-const f = fib(5)
-console.log(f.next(), f.next(), f.next(), f.next(), f.next(), f.next())
+const f = fib(5);
+console.log(f.next(), f.next(), f.next(), f.next(), f.next(), f.next());
 var counter = 3;
 
 

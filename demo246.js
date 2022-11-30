@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-10-22 14:10:31
  * @LastEditTime: 2021-10-22 15:06:51
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 分页
  */
 function Pagination(container, total, current) {
@@ -21,22 +21,22 @@ function Pagination(container, total, current) {
     if (this.total <= 1) return '';
     if (this.total <= 5) {
       return new Array(this.total).fill(0).map((_, i) => {
-        return i + 1 === this.current ? `<li class="current">${i+1}</li>` : `<li>${i+1}</li>`
-      }).join('')
+        return i + 1 === this.current ? `<li class="current">${i + 1}</li>` : `<li>${i + 1}</li>`;
+      }).join('');
     }
     if (this.current <= 3) {
       return new Array(5).fill(0).map((_, i) => {
-        return i + 1 === this.current ? `<li class="current">${i+1}</li>` : `<li>${i+1}</li>`
-      }).join('') + '<li>末页</li>'
+        return i + 1 === this.current ? `<li class="current">${i + 1}</li>` : `<li>${i + 1}</li>`;
+      }).join('') + '<li>末页</li>';
     }
     if (this.current >= this.total - 2) {
       return '<li>首页</li>' + new Array(5).fill(0).map((_, i) => {
-        return i + this.total - 4 === this.current ? `<li class="current">${i+this.total-4}</li>` : `<li>${i+this.total-4}</li>`
-      }).join('')
+        return i + this.total - 4 === this.current ? `<li class="current">${i + this.total - 4}</li>` : `<li>${i + this.total - 4}</li>`;
+      }).join('');
     }
     return '<li>首页</li>' + new Array(5).fill(0).map((_, i) => {
-      return i === 2 ? `<li class="current">${this.current}</li>` : `<li>${this.current-2+i}</li>`
-    }).join('') + '<li>末页</li>'
+      return i === 2 ? `<li class="current">${this.current}</li>` : `<li>${this.current - 2 + i}</li>`;
+    }).join('') + '<li>末页</li>';
     //TODO: 生成组件的内部html字符串
   }
 
@@ -48,5 +48,5 @@ function Pagination(container, total, current) {
   };
 }
 
-let elementA = document.getElementById('jsContainer')
-new Pagination(elementA, 7, 5)
+let elementA = document.getElementById('jsContainer');
+new Pagination(elementA, 7, 5);

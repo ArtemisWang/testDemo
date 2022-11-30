@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-01 12:37:30
  * @LastEditTime: 2022-02-13 11:07:21
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 数组乱序-洗牌算法
  */
 function disorder(array) {
@@ -17,4 +17,4 @@ function disorder(array) {
   return array;
 }
 
-console.log(disorder([1,2,3,4,5,6,7,8,9,12]))
+console.log(disorder([1, 2, 3, 4, 5, 6, 7, 8, 9, 12]));

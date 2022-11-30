@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-24 19:49:02
  * @LastEditTime: 2021-12-24 19:49:02
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 
  */
 const template = document.createElement('template');
@@ -29,10 +29,10 @@ const Texts = [
   'BuiBuiBui',
   'BiliBili',
   'Haiwei is NO.1'
-]
+];
 class MyButton extends HTMLElement {
   constructor() {
-    super()
+    super();
     const content = template.content.cloneNode(true);
     const button = content.querySelector('#btn');
     const textList = content.querySelector('#text-list');
@@ -46,8 +46,8 @@ class MyButton extends HTMLElement {
         new CustomEvent('onClick', {
           detail: 'Hello fom within the Custom Element'
         })
-      )
-    })
+      );
+    });
     this.attachShadow({
       mode: 'open'
     }).appendChild(content);
@@ -69,4 +69,4 @@ class MyButton extends HTMLElement {
   }
 }
 
-window.customElements.define('my-button', MyButton)
+window.customElements.define('my-button', MyButton);

@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-13 20:54:39
  * @LastEditTime: 2021-12-13 21:17:06
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 封装fetch
  */
 /**
@@ -42,18 +42,18 @@ function fetch(method, url, params, done, header = null) {
   }
   if (header) {
     for (let key in header) {
-      xhr.setRequestHeader(key, header[key])
+      xhr.setRequestHeader(key, header[key]);
     }
   }
   xhr.send(data);
 
   // 指定xhr状态变化事件处理函数
   // 执行回调函数
-  xhr.onreadystatechange = function() {
+  xhr.onreadystatechange = function () {
     if (this.readyState === 4) {
       // 返回的应该是一个对象，这样客户端更好渲染
       done(JSON.parse(xhr.responseText));
     }
-  }
+  };
 }
 

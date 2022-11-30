@@ -1,12 +1,13 @@
 <!--
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2022-03-15 13:04:53
  * @LastEditTime: 2022-03-15 13:15:28
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,6 +23,7 @@
     }
   </style>
 </head>
+
 <body>
   其中主资源HTML和CSS的优先级最高，其他资源根据情况的不同优先级不一
 
@@ -116,23 +118,24 @@
 
 </body>
 <script>
-  const images = document.querySelectorAll('img')
+  const images = document.querySelectorAll('img');
   const callback = entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const image = entry.target
-        const data_src = image.getAttribute('data-src')
-        image.setAttribute('src', data_src)
-        observer.unobserve(image) // 当给img元素赋上正确图片值后就解除对该元素的观察
-        console.log('触发')
+        const image = entry.target;
+        const data_src = image.getAttribute('data-src');
+        image.setAttribute('src', data_src);
+        observer.unobserve(image); // 当给img元素赋上正确图片值后就解除对该元素的观察
+        console.log('触发');
       }
-    })
-  }
-  const observer = new IntersectionObserver(callback)
+    });
+  };
+  const observer = new IntersectionObserver(callback);
   images.forEach((image) => {
-    observer.observe(image)
+    observer.observe(image);
   })
 
 
 </script>
+
 </html>

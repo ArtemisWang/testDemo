@@ -1,12 +1,13 @@
 <!--
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-24 13:50:01
  * @LastEditTime: 2021-12-24 19:49:34
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +15,7 @@
   <title>Document</title>
   <script src="./demo360-mybutton.js"></script>
 </head>
+
 <body>
   <my-button>
     <p slot="my-text">Another text from outside</p>
@@ -22,8 +24,9 @@
 <script>
   const mybutton = document.querySelector('my-button');
   mybutton.addEventListener('onClick', (value) => {
-    console.log(value)
-    mybutton.text = value.detail
+    console.log(value);
+    mybutton.text = value.detail;
   });
 </script>
+
 </html>

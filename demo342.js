@@ -1,8 +1,8 @@
 /*
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-05 19:42:33
  * @LastEditTime: 2021-12-05 20:00:49
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 作用域
  */
 // let a = 20
@@ -20,9 +20,9 @@
 
 const d = Object.preventExtensions({
   a: 1,
-  b:2
-})
-d.c = 3
-delete d.a
-d.b = 4
-console.log(d)
+  b: 2
+});
+d.c = 3;
+delete d.a;
+d.b = 4;
+console.log(d);

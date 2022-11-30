@@ -1,29 +1,31 @@
 <!--
- * @Author: yating.wang
+ * @Author: artemis
  * @Date: 2021-12-15 10:36:14
  * @LastEditTime: 2022-02-17 15:03:21
- * @LastEditors: yating.wang
+ * @LastEditors: artemis
  * @Description: 使用setInterval、setTimeout、requestAnimationFrame实现动画
 -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>使用setInterval、setTimeout、requestAnimationFrame实现动画</title>
 </head>
+
 <body>
   <div id="interval_myDiv" style="background-color: lightblue;width: 0;height: 20px;line-height: 20px;">0%</div>
   <button id="interval_btn">setInterval-run</button>
   <script>
     var timer1;
-    interval_btn.onclick = function() {
+    interval_btn.onclick = function () {
       // 取消对应的定时器，注意与clearTimeout不一样
       clearInterval(timer1);
       // 注意是字符串，给parseInt用
       interval_myDiv.style.width = '0';
-      timer1 = setInterval(function() {
+      timer1 = setInterval(function () {
         // parseInt解析一个字符串，返回一个整数
         if (parseInt(interval_myDiv.style.width) < 500) {
           interval_myDiv.style.width = parseInt(interval_myDiv.style.width) + 5 + 'px';
@@ -35,47 +37,48 @@
       }, 16);
     }
   </script>
-<div id="timeout_myDiv" style="background-color: lightblue;width: 0;height: 20px;line-height: 20px;">0%</div>
-<button id="timeout_btn">setTimeout-run</button>
-<script>
-  var timer2;
-  timeout_btn.onclick = function() {
-    // 注意与clearInterval不一样
-    clearTimeout(timer2);
-    timeout_myDiv.style.width = '0';
-    // 给function取个名字后面链式用
-    timer2 = setTimeout(function fn() {
-      if (parseInt(timeout_myDiv.style.width) < 500) {
-        timeout_myDiv.style.width = parseInt(timeout_myDiv.style.width) + 5 + 'px';
-        timeout_myDiv.innerHTML = parseInt(timeout_myDiv.style.width) / 5 + '%';
-        // 链式setTimeout
-        timer2 = setTimeout(fn, 16);
-      } else {
-        clearTimeout(timer2);
-      }
-    }, 16)
-  }
-</script>
-<div id="myDiv" style="background-color: lightblue;width: 0;height: 20px;line-height: 20px;">0%</div>
-<button id="btn">requestAnimationFrame-run</button>
-<script>
-  var timer;
-  btn.onclick = function() {
-    // 注意cancelAnimationFrame
-    cancelAnimationFrame(timer);
-    myDiv.style.width = '0';
-    timer = requestAnimationFrame(function fn() {
-      if (parseInt(myDiv.style.width) < 500) {
-        myDiv.style.width = parseInt(myDiv.style.width) + 5 + 'px';
-        myDiv.innerHTML = parseInt(myDiv.style.width) / 5 + '%';
-        // requestAnimationFrame只传入一个参数
-        timer = requestAnimationFrame(fn);
-      } else {
-        cancelAnimationFrame(timer);
-      }
-    }) // 只传入一个参数
-  }
-</script>
+  <div id="timeout_myDiv" style="background-color: lightblue;width: 0;height: 20px;line-height: 20px;">0%</div>
+  <button id="timeout_btn">setTimeout-run</button>
+  <script>
+    var timer2;
+    timeout_btn.onclick = function () {
+      // 注意与clearInterval不一样
+      clearTimeout(timer2);
+      timeout_myDiv.style.width = '0';
+      // 给function取个名字后面链式用
+      timer2 = setTimeout(function fn() {
+        if (parseInt(timeout_myDiv.style.width) < 500) {
+          timeout_myDiv.style.width = parseInt(timeout_myDiv.style.width) + 5 + 'px';
+          timeout_myDiv.innerHTML = parseInt(timeout_myDiv.style.width) / 5 + '%';
+          // 链式setTimeout
+          timer2 = setTimeout(fn, 16);
+        } else {
+          clearTimeout(timer2);
+        }
+      }, 16);
+    }
+  </script>
+  <div id="myDiv" style="background-color: lightblue;width: 0;height: 20px;line-height: 20px;">0%</div>
+  <button id="btn">requestAnimationFrame-run</button>
+  <script>
+    var timer;
+    btn.onclick = function () {
+      // 注意cancelAnimationFrame
+      cancelAnimationFrame(timer);
+      myDiv.style.width = '0';
+      timer = requestAnimationFrame(function fn() {
+        if (parseInt(myDiv.style.width) < 500) {
+          myDiv.style.width = parseInt(myDiv.style.width) + 5 + 'px';
+          myDiv.innerHTML = parseInt(myDiv.style.width) / 5 + '%';
+          // requestAnimationFrame只传入一个参数
+          timer = requestAnimationFrame(fn);
+        } else {
+          cancelAnimationFrame(timer);
+        }
+      }); // 只传入一个参数
+    }
+  </script>
 
 </body>
+
 </html>
