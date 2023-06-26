@@ -29,8 +29,16 @@
 // 在 <script setup> 标签内定义的变量和函数，都可以在模板中直接使用
 import { ref, computed, watchEffect } from "vue";
 import Warning from "./Warning.vue";
-let { title, todos, addTodo, clear, active, all, allDone, showModal } =
-  useTodos();
+let {
+  title,
+  todos,
+  addTodo,
+  clear,
+  active,
+  all,
+  allDone,
+  showModal
+} = useTodos();
 function useTodos() {
   let title = ref("");
   let todos = useStorage("todos", []);
@@ -42,26 +50,26 @@ function useTodos() {
     }
     todos.value.push({
       title: title.value,
-      done: false,
+      done: false
     });
     title.value = "";
   }
   function clear() {
-    todos.value = todos.value.filter((v) => !v.done);
+    todos.value = todos.value.filter(v => !v.done);
   }
   let active = computed(() => {
-    return todos.value.filter((v) => !v.done).length;
+    return todos.value.filter(v => !v.done).length;
   });
   let all = computed(() => todos.value.length);
   let allDone = computed({
-    get: function () {
+    get: function() {
       return active.value === 0;
     },
-    set: function (value) {
-      todos.value.forEach((todo) => {
+    set: function(value) {
+      todos.value.forEach(todo => {
         todo.done = value;
       });
-    },
+    }
   });
   return { title, todos, addTodo, clear, active, all, allDone, showModal };
 }

@@ -1,8 +1,8 @@
 '''
 Author: artemis
 Date: 2022-11-30 21:32:11
-LastEditors: artemis
-LastEditTime: 2022-12-05 22:27:18
+LastEditors: yating.wang
+LastEditTime: 2022-12-08 09:01:47
 Description: ape+cue->m4a
 '''
 import os
@@ -25,7 +25,7 @@ def sec2str(time):
   return hour+':'+min+':'+sec
 
 
-path = "/Users/artemis/Desktop/林俊杰"
+path = "/Users/artemis/Desktop/wxl"
 new_path = "/Users/artemis/Desktop/new"
 file_all = os.listdir(path)
 for i in file_all:

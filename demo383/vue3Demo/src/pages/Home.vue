@@ -8,7 +8,7 @@
 
 <template>
   <h1>这是首页</h1>
-  <TodoList />
+  <!-- <TodoList /> -->
   <Count />
   <button @click="toggle">点击切换到全屏</button>
 </template>

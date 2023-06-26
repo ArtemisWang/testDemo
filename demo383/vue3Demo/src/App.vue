@@ -17,7 +17,8 @@ import HelloWorld from "./components/HelloWorld.vue";
     <router-link to="/">首页</router-link> |
     <router-link to="/about">关于</router-link> |
     <router-link to="/rate">评价</router-link> |
-    <router-link to="/animation">动画效果</router-link>
+    <router-link to="/animation">动画效果</router-link> |
+    <router-link to="/hooks">hooks</router-link>
   </div>
   <router-view></router-view>
 </template>

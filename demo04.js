@@ -37,7 +37,10 @@ const a = {
   },
   fn() {
     console.log(this.action);
-  }
+  },
+  b: null,
+  c: undefined,
+  d: NaN
 };
 const b = deepClone(a);
 console.log(b, b.fn);

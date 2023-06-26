@@ -13,6 +13,7 @@ import Home from '../pages/Home.vue';
 import About from '../pages/About.vue';
 import RatePage from '../pages/RatePage.vue';
 import AnimationPage from '../pages/AnimationPage.vue';
+import HooksPage from '../pages/HooksPage.vue';
 
 const routes = [{
   path: '/',
@@ -31,6 +32,10 @@ const routes = [{
   path: '/animation',
   name: 'AnimationPage',
   component: AnimationPage
+}, {
+  path: '/hooks',
+  name: 'HooksPage',
+  component: HooksPage
 }
 ];
 
