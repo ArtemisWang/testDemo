@@ -1,0 +1,66 @@
+<!--
+ * @Author: yating.wang
+ * @Date: 2023-10-26 17:30:23
+ * @LastEditors: yating.wang
+ * @LastEditTime: 2023-10-26 17:44:07
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>赛博朋克动画</title>
+    <style>
+      .main {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+      }
+      .template.t1 {
+        position: absolute;
+        font-size: 72px;
+        font-weight: bold;
+        margin-left: 5px;
+        color: rgb(248, 56, 66);
+        animation: move-body-t1 0.3s infinite;
+      }
+      .template.t2 {
+        position: absolute;
+        font-size: 72px;
+        font-weight: bold;
+        margin-left: -5px;
+        color: rgb(51, 248, 255);
+        mix-blend-mode: lighten;
+        animation: move-body-t1 0.2s infinite;
+        animation-delay: 0.2s;
+      }
+      @keyframes move-body-t1 {
+        from {
+          margin-left: 5px;
+        }
+        to {
+          margin-left: 0px;
+        }
+      }
+      @keyframes move-body-t2 {
+        from {
+          margin-left: -5px;
+        }
+        to {
+          margin-left: 0px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <p class="template t1">bounce</p>
+      <p class="template t2">bounce</p>
+    </div>
+  </body>
+</html>
